@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/minikin/audio_player_flutter">
-  Apple Music Style Audio Style Player in Flutter
+  Apple Music Style Audio Player in Flutter
   </a>
 </h1>
 
