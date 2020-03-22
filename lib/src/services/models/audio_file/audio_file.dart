@@ -38,6 +38,15 @@ abstract class AudioFile implements Built<AudioFile, AudioFileBuilder> {
         AudioFile.serializer, json.decode(jsonString));
   }
 
+  static String listOfAudioFilesToJson(List<AudioFile> audioFiles) {
+    final data = <String>[];
+    audioFiles.forEach((item) {
+      final json = item.toJson();
+      data.add(json);
+    });
+    return '$data';
+  }
+
   static BuiltList<AudioFile> parseListOfAudioFiles(String responseBody) {
     final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
     return deserializeListOf<AudioFile>(parsed);

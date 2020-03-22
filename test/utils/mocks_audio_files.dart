@@ -1,4 +1,5 @@
 import 'package:audio_player_flutter/src/services/models/audio_file/audio_file.dart';
+import 'package:audio_player_flutter/src/services/persistance/json_storage.dart';
 import 'package:uuid/uuid.dart';
 
 import 'mock_utils.dart';
@@ -68,19 +69,20 @@ const _audioFilesTitles = [
 
 Future<void> generateMockRelaxItemsJsonFile() async {
   final _jsonStorage = JsonStorage();
-  final _relaxItems = MockAudioFilesDatasource.randomRelaxItemsList();
-  await _jsonStorage.writeJson(AudioFile.listOfRelaxItemsToJson(_relaxItems));
+  final _audioItems = MockAudioFilesDataSource.randomList();
+  await _jsonStorage.writeJson(AudioFile.listOfAudioFilesToJson(_audioItems));
 }
 
-class MockAudioFilesDatasource {
-  static List<AudioFile> randomRelaxItemsList() {
+class MockAudioFilesDataSource {
+  static List<AudioFile> randomList() {
     return List<AudioFile>.generate(
-        randomIntInRange(1000, 1100), (index) => _randomRelaxItem());
+        randomIntInRange(200, 300), (index) => _randomAudioFile());
   }
 
-  static AudioFile _randomRelaxItem() {
+  static AudioFile _randomAudioFile() {
     final authors =
         _audioFilesAuthors[random.nextInt(_audioFilesAuthors.length)];
+
     final title = _audioFilesTitles[random.nextInt(_audioFilesTitles.length)];
 
     final artwork =
