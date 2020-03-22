@@ -1,11 +1,11 @@
 <h1 align="center">
   <a href="https://github.com/minikin/audio_player_flutter">
-  Apple Music Audio Player in Flutter
+  Apple Music Style Audio Style Player in Flutter
   </a>
 </h1>
 
 <p align="center">
-  Audio Player for Flutter apps.
+  Apple Music / Tidal Style Audio Player for Flutter powered by Streams and Value Types.
 </p>
 
 <p align="center">
