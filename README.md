@@ -32,7 +32,7 @@
 
 - Apple Music / Tidal style Audio Player
 - Background audio playback for iOS/Android
-- Audio files fetched from a [remote server]()
+- Audio files fetched from a [remote server](https://github.com/minikin/json_server_for_audio_player_flutter)
 - Responsive to screen size changes including mobile device orientation changes
 - Powered by [build_value](https://pub.dev/packages/built_value) and [built_collection](https://pub.dev/packages/built_collection)
 - State management by [BloC](https://pub.dev/packages/flutter_bloc)s
