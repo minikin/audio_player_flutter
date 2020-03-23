@@ -92,7 +92,8 @@ class MockAudioFilesDataSource {
       (b) => b
         ..artist = authors
         ..artworkUrlPath = artwork
-        ..audioFileUrlPath = 'https://luan.xyz/files/audio/ambient_c_motion.mp3'
+        ..audioFileUrlPath =
+            'https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1'
         ..duration = 210000
         ..id = Uuid().v4()
         ..title = title,
