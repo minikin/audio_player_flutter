@@ -67,4 +67,4 @@ See the [LICENSE](https://github.com/minikin/flutter-web-demo/blob/master/LICENS
 
 Audio/Music Copyright & License: [Benjamin Tissot (also known as Bensound)](https://www.bensound.com/royalty-free-music/track/erf)
 
-Artworks Copyright & License: [ICONS8](https://icons8.com/)
+Illustration Copyright & License: [Ouch.pics](https://icons8.com/)

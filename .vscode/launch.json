@@ -8,6 +8,12 @@
       "name": "Flutter",
       "request": "launch",
       "type": "dart"
+    },
+    {
+      "name": "Dart Test",
+      "program": "test/all.dart",
+      "request": "launch",
+      "type": "dart"
     }
   ]
 }
