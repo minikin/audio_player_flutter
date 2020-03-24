@@ -1,11 +1,11 @@
 <h1 align="center">
   <a href="https://github.com/minikin/audio_player_flutter">
-  Apple Music Style Audio Style Player in Flutter
+  Apple Music / Tidal Style Audio Player in Flutter.
   </a>
 </h1>
 
 <p align="center">
-  Apple Music / Tidal Style Audio Player for Flutter powered by Streams and Value Types.
+  Apple Music / Tidal Style Audio Player for Flutter powered by Streams, Value Types and BLoC.
 </p>
 
 <p align="center">
@@ -26,16 +26,16 @@
 - [Requirements](#-requirements)
 - [Develop](#-develop)
 - [FAQ](#-faq)
-- [Troubleshooting](#-troubleshooting)
 - [License](#-license)
 
 ## 📋 Features
 
 - Apple Music / Tidal style Audio Player
 - Background audio playback for iOS/Android
-- Audio files fetched from a remote server
+- Audio files fetched from a [remote server](https://github.com/minikin/json_server_for_audio_player_flutter)
 - Responsive to screen size changes including mobile device orientation changes
 - Powered by [build_value](https://pub.dev/packages/built_value) and [built_collection](https://pub.dev/packages/built_collection)
+- State management by [BloC](https://pub.dev/packages/flutter_bloc)s
 - Background JSON parsing
 
 ## ⚙️ Requirements
@@ -52,15 +52,13 @@
 
 ## 🎉 Develop
 
-_WIP_
+```sh
+git clone https://github.com/minikin/audio_player_flutter.git && cd audio_player_flutter
+```
 
 ## 🤷‍♀️ FAQ
 
 If you have any questions ping me on twitter: [@minikin](https://twitter.com/minikin)
-
-## ⛑Troubleshooting
-
-_WIP_
 
 ## 📄 License
 
@@ -69,4 +67,4 @@ See the [LICENSE](https://github.com/minikin/flutter-web-demo/blob/master/LICENS
 
 Audio/Music Copyright & License: [Benjamin Tissot (also known as Bensound)](https://www.bensound.com/royalty-free-music/track/erf)
 
-Artworks Copyright & License: [ICONS8](https://icons8.com/)
+Illustration Copyright & License: [Ouch.pics](https://icons8.com/)
