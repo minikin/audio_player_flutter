@@ -20,7 +20,13 @@
   </a>
 </p>
 
-## Contents
+<p align="center">
+  <a href="https://github.com/minikin/audio_player_flutter">
+    <img src="https://img.shields.io/badge/platform-iOS%20%7C%20Android-orange.svg" alt="Supported platforms" />
+  </a>
+</p>
+
+# Content
 
 - [Features](#-features)
 - [Requirements](#-requirements)
@@ -28,7 +34,7 @@
 - [FAQ](#-faq)
 - [License](#-license)
 
-## 📋 Features
+## Features
 
 - Apple Music / Tidal style Audio Player
 - Background audio playback for iOS/Android
@@ -38,7 +44,7 @@
 - State management by [BloC](https://pub.dev/packages/flutter_bloc)s
 - Background JSON parsing
 
-## ⚙️ Requirements
+## Requirements
 
 - Flutter: the latest version on `flutter beta channel`
 - Dart: 2.8.0+
@@ -50,17 +56,17 @@
   - [Visual Studio Code](https://flutter.dev/docs/get-started/editor?tab=androidstudio)
   - [Android Studio / IntelliJ](https://flutter.dev/docs/get-started/editor?tab=vscode)
 
-## 🎉 Develop
+## Develop
 
 ```sh
 git clone https://github.com/minikin/audio_player_flutter.git && cd audio_player_flutter
 ```
 
-## 🤷‍♀️ FAQ
+## FAQ
 
 If you have any questions ping me on twitter: [@minikin](https://twitter.com/minikin)
 
-## 📄 License
+## License
 
 The source code of Audio Player project is available under the MIT license.
 See the [LICENSE](https://github.com/minikin/flutter-web-demo/blob/master/LICENSE) file for more info.

@@ -7,10 +7,11 @@
     {
       "name": "Flutter",
       "request": "launch",
-      "type": "dart"
+      "type": "dart",
+      "program": "lib/src/main.dart"
     },
     {
-      "name": "Dart Test",
+      "name": "Test",
       "program": "test/all.dart",
       "request": "launch",
       "type": "dart"

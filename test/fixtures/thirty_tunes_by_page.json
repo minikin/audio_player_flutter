@@ -1,0 +1,242 @@
+[
+  {
+    "artist": "Face Your Thoughts",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/7.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "14cc7ea1-b3f2-4be0-a386-f1a11e5a83a4",
+    "title": "He Loves I Am Trouble"
+  },
+  {
+    "artist": "Jay Zee",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/7.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "e5b7cb3b-0dc7-4c36-b917-da2e0eec2f51",
+    "title": "Magic Of The Stars"
+  },
+  {
+    "artist": "Soundscapes over Sun",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/5.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "a83fb1a5-be45-41ce-ac9e-a7ceaa403586",
+    "title": "Deep Forest"
+  },
+  {
+    "artist": "The Doors",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/1.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "4465e8ce-1607-4524-8558-e3c38da0d4df",
+    "title": "Dreaming"
+  },
+  {
+    "artist": "The End",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/20.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "5b3140cf-1df7-4508-9ff6-b21ee41ebb8b",
+    "title": "Deep Forest"
+  },
+  {
+    "artist": "The Doors",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/8.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "1e30bde9-02de-4a69-aede-bc9c41a36071",
+    "title": "Love For Her Story"
+  },
+  {
+    "artist": "Sleep 342",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/10.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "e8f676dd-0f0e-40bc-85b0-c41ce2249094",
+    "title": "Ocean Waves"
+  },
+  {
+    "artist": "Soundscapes over Sun",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/1.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "33aad38f-ad07-4d37-af13-0b51f9238b86",
+    "title": "Hood Of The Stars"
+  },
+  {
+    "artist": "Hypnosis",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/18.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "5693e9e6-75df-4b36-8031-f377132f321d",
+    "title": "Memories For Life"
+  },
+  {
+    "artist": "Sleep 342",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/22.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "ee0e0e3d-46c6-4dc1-bbfc-d62315f07562",
+    "title": "He Loves I Am Trouble"
+  },
+  {
+    "artist": "Hair Brushing",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/2.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "f2e10089-c06f-4f31-8192-b00028e54dc5",
+    "title": "White Noise"
+  },
+  {
+    "artist": "No Doubt",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/1.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "9accb923-0736-47c0-8723-7fa80f33000e",
+    "title": "Motions Of Us"
+  },
+  {
+    "artist": "Hypnosis",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/20.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "1fda5875-7ee5-4d4c-b9c6-6e454f563f99",
+    "title": "Memories For Life"
+  },
+  {
+    "artist": "The Doors",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/16.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "357ce288-563d-4ca1-b47d-b84a0ccd78a5",
+    "title": "Rapunzel"
+  },
+  {
+    "artist": "Visualization",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/6.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "7b1a0063-6263-4725-8443-312be80d846b",
+    "title": "Her Ways"
+  },
+  {
+    "artist": "Soundscapes over Sun",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/13.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "dc4b1179-3368-49cd-896e-43f74b1935fd",
+    "title": "Drone i12"
+  },
+  {
+    "artist": "Visualization",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/18.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "37f5aff3-2483-4ca3-b51c-54e0fe930a37",
+    "title": "Magic Of The Stars"
+  },
+  {
+    "artist": "Dj Vitakic",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/15.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "b287726a-edc3-419e-9353-e8f19069ea7d",
+    "title": "Babe Ride"
+  },
+  {
+    "artist": "Drone some D",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/1.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "5bbf3bc5-9bd5-4f40-9e5a-b57ea6143e1e",
+    "title": "Time Of His Thunder"
+  },
+  {
+    "artist": "No Doubt",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/14.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "c8bf7e9b-6930-4fd7-b6bc-d42c78a0591b",
+    "title": "Hood Of The Stars"
+  },
+  {
+    "artist": "Hypnosis",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/21.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "ff19533e-ab61-4480-b7cb-fbdcee9898a4",
+    "title": "Softy"
+  },
+  {
+    "artist": "2 PAc",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/15.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "e64aa2bf-448e-4855-9131-9c605d9f38cd",
+    "title": "Her Ways"
+  },
+  {
+    "artist": "Sleep 342",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/15.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "dc7968d6-71a2-4ed4-95f2-9d7567d6b6b2",
+    "title": "Love For Her Story"
+  },
+  {
+    "artist": "Rap Steine",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/17.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "a2bfbe0e-b9b7-4418-b2d4-89cebbcbe775",
+    "title": "Magic Of The Stars"
+  },
+  {
+    "artist": "Visualization",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/8.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "cc09b79e-ecdf-4a93-9083-ae69bba06eb5",
+    "title": "Her Ways"
+  },
+  {
+    "artist": "No Doubt",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/5.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "c2c2c8b4-36e9-4f58-aec6-ccfdf11bad46",
+    "title": "Drone i12"
+  },
+  {
+    "artist": "Jay Zee",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/21.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "237f8073-0c4b-4410-ab5a-658111a9dc39",
+    "title": "Gentle Rain"
+  },
+  {
+    "artist": "Hair Brushing",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/18.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "4fa5ae57-a94a-4672-8e99-d3bc829c19c7",
+    "title": "Love For Her Story"
+  },
+  {
+    "artist": "The Doors",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/18.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "f67a669c-b10e-401d-86ed-14176fc08cdb",
+    "title": "Ocean Waves"
+  },
+  {
+    "artist": "The End",
+    "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/13.png",
+    "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+    "duration": 241000,
+    "id": "3e73c13a-9e2a-4f5e-b59a-a7dc4aa06a33",
+    "title": "Love For Her Story"
+  }
+]
