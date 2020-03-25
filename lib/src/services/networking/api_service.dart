@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   final Map<String, Object> cache;
-  final _baseUrl = '';
+  final _baseUrl = 'https://api-flutter-audio-player.herokuapp.com';
   final http.Client client;
 
   ApiService({
