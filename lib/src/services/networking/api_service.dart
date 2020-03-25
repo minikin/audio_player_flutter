@@ -16,7 +16,7 @@ class ApiService {
   })  : client = client ?? http.Client(),
         cache = cache ?? <String, Object>{};
 
-  Future<BuiltList<AudioFile>> fetchAllOfAudioFiles() async {
+  Future<BuiltList<AudioFile>> fetchAllTunes() async {
     final response = await client.get(
       '$_baseUrl/tunes',
       headers: {
@@ -26,7 +26,7 @@ class ApiService {
         HttpHeaders.authorizationHeader: 'Bearer account.accessToken'
       },
     );
-    print('Api Service: fetch AudioFile: $response');
+    print('Api Service: fetch AudioFile: ${response.statusCode}');
     if (response.statusCode == 200) {
       return compute(AudioFile.parseListOfAudioFiles, response.body);
     } else {
