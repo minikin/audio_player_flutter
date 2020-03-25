@@ -70,9 +70,14 @@ class MockAudioFilesDataSource {
 
     final title = _audioFilesTitles[random.nextInt(_audioFilesTitles.length)];
 
+<<<<<<< HEAD
     final artworkId = randomIntInRange(1, 23);
     final artwork =
         'http://api-flutter-audio-player.herokuapp.com/assets/images/$artworkId.png';
+=======
+    final artwork =
+        _audioArtworkUrlPaths[random.nextInt(_audioArtworkUrlPaths.length)];
+>>>>>>> 1d9a9cd80fe49b72cd838eae6a4b8aaf84309a70
 
     return AudioFile(
       (b) => b
@@ -80,7 +85,11 @@ class MockAudioFilesDataSource {
         ..artworkUrlPath = artwork
         ..audioFileUrlPath =
             'https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1'
+<<<<<<< HEAD
         ..duration = 241000
+=======
+        ..duration = 210000
+>>>>>>> 1d9a9cd80fe49b72cd838eae6a4b8aaf84309a70
         ..id = Uuid().v4()
         ..title = title,
     );
