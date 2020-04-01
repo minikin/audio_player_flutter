@@ -8,6 +8,7 @@ class Explore extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(title: const Text('Explore')),
       body: ResponsiveSafeArea(
         builder: (context, size) {
           return Container(

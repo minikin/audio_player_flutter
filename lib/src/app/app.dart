@@ -1,3 +1,4 @@
+import 'package:audio_player_flutter/src/app/features/explore/screens/explore.dart';
 import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:flutter/material.dart';
 
@@ -6,12 +7,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _fetchAllTunes();
-    return const MaterialApp(
-      title: 'Audio Player',
-      home: Center(
-        child: Text('Text'),
-      ),
-    );
+    return const MaterialApp(title: 'Audio Player', home: Explore());
   }
 
   void _fetchAllTunes() async {
