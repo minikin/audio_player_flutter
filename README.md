@@ -15,14 +15,11 @@
   <a href="https://app.bitrise.io/app/354f49154884b44e#/builds">
     <img src="https://app.bitrise.io/app/354f49154884b44e/status.svg?token=fDYsKP7LEgITvjVUVbOS9Q" alt="Current Build Status." />
   </a>
+      <a href="https://github.com/minikin/audio_player_flutter">
+    <img src="https://img.shields.io/badge/platform-iOS%20%7C%20Android-orange.svg" alt="Supported platforms" />
+  </a>
   <a href="https://github.com/minikin/audio_player_flutter/blob/develop/CONTRIBUTING.md">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/minikin/audio_player_flutter">
-    <img src="https://img.shields.io/badge/platform-iOS%20%7C%20Android-orange.svg" alt="Supported platforms" />
   </a>
 </p>
 
