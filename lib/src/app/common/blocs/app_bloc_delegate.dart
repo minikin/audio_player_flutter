@@ -9,7 +9,7 @@ class AppBlocDelegate extends BlocDelegate {
     StackTrace stacktrace,
   ) {
     super.onError(bloc, error, stacktrace);
-    print('💥💥💥App state has error: $error, $stacktrace💥💥💥');
+    print('💥💥💥App has error: $error, $stacktrace💥💥💥');
   }
 
   @override
