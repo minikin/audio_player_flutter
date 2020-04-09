@@ -1,4 +1,3 @@
-import 'package:audio_player_flutter/src/app/app.dart';
-import 'package:flutter/material.dart';
+import 'package:audio_player_flutter/src/configurations/app_common_configs.dart';
 
-void main() => runApp(App());
+void main() => configureApp();
