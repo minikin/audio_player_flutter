@@ -19,6 +19,7 @@ class ExploreItem extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       onTap: () => onItemTapped(audioFile),
       child: Container(
+        color: Colors.blue,
         margin: const EdgeInsets.all(4),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
