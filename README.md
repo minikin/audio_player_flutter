@@ -36,7 +36,7 @@
 - Apple Music / Tidal style Audio Player
 - Background audio playback for iOS/Android
 - Audio files fetched from a [remote server](https://github.com/minikin/json_server_for_audio_player_flutter)
-- Responsive to screen size changes including mobile device orientation changes
+- Responsive to screen size changes
 - Powered by [build_value](https://pub.dev/packages/built_value) and [built_collection](https://pub.dev/packages/built_collection)
 - State management by [BloC](https://pub.dev/packages/flutter_bloc)s
 - Background JSON parsing
@@ -45,7 +45,7 @@
 
 - Flutter: the latest version on `flutter beta channel`
 - Dart: 2.8.0+
-- Xcode: 11.3.0+
+- Xcode: 11.4.0+
 - Androind Studio 3.5.0+
 - Ruby: 2.6.0+
 - CocoaPods: 1.8.4+
