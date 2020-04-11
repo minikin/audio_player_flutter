@@ -1,4 +1,5 @@
 import 'package:audio_player_flutter/src/app/features/explore/blocs/blocs.dart';
+import 'package:audio_player_flutter/src/configurations/environment/environment.dart';
 import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +17,7 @@ class ExploreBloc extends Bloc<ExploreEvent, ExploreState> {
   Stream<ExploreState> _mapFetchOPostsInitiated(FetchAudioItems event) async* {
     yield ExploreState.loading();
     try {
-      final results = await ApiRepository().apiService.fetchAllTunes();
+      final results = await Current.apiRepository.fetchAllTunes();
 
       if (results.isEmpty) {
         yield ExploreState.empty();
