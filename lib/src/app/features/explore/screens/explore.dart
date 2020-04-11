@@ -12,7 +12,7 @@ class Explore extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: const Text('Explore New Music')),
+      appBar: const CustomAppBar(title: 'Explore New Music'),
       body: ResponsiveSafeArea(
         builder: (context, size) {
           return BlocConsumer<ExploreBloc, ExploreState>(
