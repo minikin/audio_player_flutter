@@ -13,35 +13,39 @@ class ExploreItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final time = Duration(milliseconds: audioFile.duration);
     return GestureDetector(
       key: UniqueKey(),
       behavior: HitTestBehavior.opaque,
       onTap: () => onItemTapped(audioFile),
       child: Container(
-        color: Colors.blue,
+        color: Colors.grey[50],
         margin: const EdgeInsets.all(4),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image.network(
-              audioFile.artworkUrlPath,
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              audioFile.title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              '${time.inMinutes.toString()} min',
-              style: const TextStyle(fontSize: 14, color: Colors.grey),
-            ),
-            const SizedBox(height: 8),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(4),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Image.network(
+                audioFile.artworkUrlPath,
+                fit: BoxFit.cover,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                audioFile.artist,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                audioFile.title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontSize: 16, color: Colors.grey),
+              ),
+            ],
+          ),
         ),
       ),
     );

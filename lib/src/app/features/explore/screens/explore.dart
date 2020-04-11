@@ -12,7 +12,7 @@ class Explore extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: const Text('Explore')),
+      appBar: AppBar(title: const Text('Explore New Music')),
       body: ResponsiveSafeArea(
         builder: (context, size) {
           return BlocConsumer<ExploreBloc, ExploreState>(
@@ -39,11 +39,10 @@ class Explore extends StatelessWidget {
   Widget _listOfAudioItems(BuildContext context, ExploreState state) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.all(8),
-        color: Colors.white60,
+        color: Colors.white70,
+        padding: const EdgeInsets.all(4),
         child: Scrollbar(
           child: GridView.builder(
-            key: PageStorageKey(key),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: _childAspectRatio(context),
@@ -54,7 +53,7 @@ class Explore extends StatelessWidget {
               return ExploreItem(
                 audioFile: state.items[index],
                 onItemTapped: (item) {
-                  return print(item);
+                  print(item);
                 },
               );
             },
@@ -67,7 +66,7 @@ class Explore extends StatelessWidget {
   double _childAspectRatio(BuildContext context) {
     final _childAspectRatio = screenWidth(context) / screenHeight(context);
     if (_childAspectRatio < 0.5) {
-      return _childAspectRatio / 0.75;
+      return _childAspectRatio / 0.62;
     } else {
       return _childAspectRatio;
     }
