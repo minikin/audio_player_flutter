@@ -37,27 +37,25 @@ class Explore extends StatelessWidget {
   }
 
   Widget _listOfAudioItems(BuildContext context, ExploreState state) {
-    return Expanded(
-      child: Container(
-        color: Colors.white70,
-        padding: const EdgeInsets.all(4),
-        child: Scrollbar(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: _childAspectRatio(context),
-            ),
-            shrinkWrap: true,
-            itemCount: state.items.length,
-            itemBuilder: (context, index) {
-              return ExploreItem(
-                audioFile: state.items[index],
-                onItemTapped: (item) {
-                  print(item);
-                },
-              );
-            },
+    return Container(
+      color: Colors.white70,
+      padding: const EdgeInsets.all(4),
+      child: Scrollbar(
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: _childAspectRatio(context),
           ),
+          shrinkWrap: true,
+          itemCount: state.items.length,
+          itemBuilder: (context, index) {
+            return ExploreItem(
+              audioFile: state.items[index],
+              onItemTapped: (item) {
+                print(item);
+              },
+            );
+          },
         ),
       ),
     );
