@@ -39,9 +39,18 @@ class AudioPlayer extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Center(
-                              child: Text(
-                                '${audioFile.title}',
-                                style: const TextStyle(fontSize: 20),
+                              child: Column(
+                                children: <Widget>[
+                                  Text(
+                                    '${audioFile.artist}',
+                                    style: const TextStyle(fontSize: 32),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    '${audioFile.title}',
+                                    style: const TextStyle(fontSize: 20),
+                                  ),
+                                ],
                               ),
                             ),
                             Positioned(
