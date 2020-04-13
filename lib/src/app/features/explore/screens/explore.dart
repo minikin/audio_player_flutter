@@ -61,11 +61,10 @@ class Explore extends StatelessWidget {
   }
 
   double _childAspectRatio(BuildContext context) {
-    final _childAspectRatio = screenWidth(context) / screenHeight(context);
-    if (_childAspectRatio < 0.5) {
-      return _childAspectRatio / 0.62;
+    if (aspectRatio(context) < 0.5) {
+      return aspectRatio(context) / 0.62;
     } else {
-      return _childAspectRatio;
+      return aspectRatio(context);
     }
   }
 
