@@ -1,3 +1,5 @@
+import 'package:audio_player_flutter/src/app/features/audio_player/blocs/blocs.dart'
+    show AudioPlayerBloc;
 import 'package:audio_player_flutter/src/services/services.dart' show AudioFile;
 import 'package:flutter/material.dart';
 
