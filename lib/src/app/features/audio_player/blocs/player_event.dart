@@ -1,6 +1,6 @@
 library player_event;
 
-import 'package:audio_player_flutter/src/services/services.dart' show AudioFile;
+import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:built_value/built_value.dart';
 
 part 'player_event.g.dart';

@@ -1,6 +1,8 @@
 import 'package:audio_player_flutter/src/app/common/widgets/widgets.dart';
+import 'package:audio_player_flutter/src/app/features/audio_player/screens/audio_player.dart';
 import 'package:audio_player_flutter/src/app/features/explore/blocs/blocs.dart';
 import 'package:audio_player_flutter/src/app/features/explore/widgets/explore_item.dart';
+import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:audio_player_flutter/src/services/utils/free_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -50,11 +52,8 @@ class Explore extends StatelessWidget {
           itemCount: state.items.length,
           itemBuilder: (context, index) {
             return ExploreItem(
-              audioFile: state.items[index],
-              onItemTapped: (item) {
-                print(item);
-              },
-            );
+                audioFile: state.items[index],
+                onItemTapped: (item) => _showAudioPlayer(context, item));
           },
         ),
       ),
@@ -68,5 +67,14 @@ class Explore extends StatelessWidget {
     } else {
       return _childAspectRatio;
     }
+  }
+
+  void _showAudioPlayer(BuildContext context, AudioFile audioFile) {
+    Navigator.push(
+      context,
+      CustomModalRoute(
+        builder: (context) => AudioPlayer(audioFile: audioFile),
+      ),
+    );
   }
 }
