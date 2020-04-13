@@ -1,6 +1,8 @@
 import 'package:audio_player_flutter/src/app/common/widgets/widgets.dart';
+import 'package:audio_player_flutter/src/app/features/audio_player/screens/audio_player.dart';
 import 'package:audio_player_flutter/src/app/features/explore/blocs/blocs.dart';
 import 'package:audio_player_flutter/src/app/features/explore/widgets/explore_item.dart';
+import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:audio_player_flutter/src/services/utils/free_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,38 +39,41 @@ class Explore extends StatelessWidget {
   }
 
   Widget _listOfAudioItems(BuildContext context, ExploreState state) {
-    return Expanded(
-      child: Container(
-        color: Colors.white70,
-        padding: const EdgeInsets.all(4),
-        child: Scrollbar(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: _childAspectRatio(context),
-            ),
-            shrinkWrap: true,
-            itemCount: state.items.length,
-            itemBuilder: (context, index) {
-              return ExploreItem(
-                audioFile: state.items[index],
-                onItemTapped: (item) {
-                  print(item);
-                },
-              );
-            },
+    return Container(
+      color: Colors.white70,
+      padding: const EdgeInsets.all(4),
+      child: Scrollbar(
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: _childAspectRatio(context),
           ),
+          shrinkWrap: true,
+          itemCount: state.items.length,
+          itemBuilder: (context, index) {
+            return ExploreItem(
+                audioFile: state.items[index],
+                onItemTapped: (item) => _showAudioPlayer(context, item));
+          },
         ),
       ),
     );
   }
 
   double _childAspectRatio(BuildContext context) {
-    final _childAspectRatio = screenWidth(context) / screenHeight(context);
-    if (_childAspectRatio < 0.5) {
-      return _childAspectRatio / 0.62;
+    if (aspectRatio(context) < 0.5) {
+      return aspectRatio(context) / 0.62;
     } else {
-      return _childAspectRatio;
+      return aspectRatio(context);
     }
+  }
+
+  void _showAudioPlayer(BuildContext context, AudioFile audioFile) {
+    Navigator.push(
+      context,
+      CustomModalRoute(
+        builder: (context) => AudioPlayer(audioFile: audioFile),
+      ),
+    );
   }
 }
