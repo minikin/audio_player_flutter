@@ -1,3 +1,4 @@
+import 'package:audio_player_flutter/src/app/features/audio_player/models/audio_skip_button_type.dart';
 import 'package:flutter/material.dart';
 
 class AudioSkipButton<S> extends StatelessWidget {
