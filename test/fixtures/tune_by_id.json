@@ -1,8 +1,8 @@
 {
-  "artist": "Face Your Thoughts",
-  "artworkUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/images/7.png",
-  "audioFileUrlPath": "https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1",
+  "artist": "Dreaming T",
+  "artworkUrlPath": "http://api-flutter-audio-player.herokuapp.com/assets/images/19.png",
+  "audioFileUrlPath": "https://api-flutter-audio-player.herokuapp.com/assets/audio/bensound-erf.mp3",
   "duration": 241000,
-  "id": "14cc7ea1-b3f2-4be0-a386-f1a11e5a83a4",
-  "title": "He Loves I Am Trouble"
+  "id": "f6b777dd-768a-4133-9ac3-2429afea8d80",
+  "title": "Drone i12"
 }
