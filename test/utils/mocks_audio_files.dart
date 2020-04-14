@@ -80,7 +80,7 @@ class MockAudioFilesDataSource {
         ..artworkUrlPath = artwork
         ..audioFileUrlPath =
             'https://api-flutter-audio-player.herokuapp.com/assets/audio/bensound-erf.mp3'
-        ..duration = 241000
+        ..duration = 264600
         ..id = Uuid().v4()
         ..title = title,
     );
