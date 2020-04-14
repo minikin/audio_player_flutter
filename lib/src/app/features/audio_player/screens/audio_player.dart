@@ -33,7 +33,7 @@ class AudioPlayer extends StatelessWidget {
                   color: Colors.white70,
                   child: Column(
                     children: <Widget>[
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 4),
                       Align(
                         alignment: const Alignment(0.9, -0.6),
                         child: IconButton(
@@ -55,12 +55,13 @@ class AudioPlayer extends StatelessWidget {
                                   children: <Widget>[
                                     Text(
                                       '${audioFile.artist}',
-                                      style: const TextStyle(fontSize: 32),
+                                      style: const TextStyle(fontSize: 28),
+                                      maxLines: 1,
                                     ),
                                     const SizedBox(height: 8),
                                     Text(
                                       '${audioFile.title}',
-                                      style: const TextStyle(fontSize: 20),
+                                      style: const TextStyle(fontSize: 18),
                                     ),
                                   ],
                                 ),
@@ -150,7 +151,7 @@ class AudioPlayer extends StatelessWidget {
     } else {
       return Image.network(
         audioFile.artworkUrlPath,
-        height: screenHeight(context) - 400,
+        height: screenHeight(context) - 450,
         fit: BoxFit.cover,
       );
     }
