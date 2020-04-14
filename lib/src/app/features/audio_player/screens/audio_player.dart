@@ -33,43 +33,45 @@ class AudioPlayer extends StatelessWidget {
                   color: Colors.white70,
                   child: Column(
                     children: <Widget>[
-                      const SizedBox(height: 24),
-                      SizedBox(
-                        width: screenWidth(context),
-                        child: Stack(
-                          children: <Widget>[
-                            Center(
-                              child: Column(
-                                children: <Widget>[
-                                  Text(
-                                    '${audioFile.artist}',
-                                    style: const TextStyle(fontSize: 32),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    '${audioFile.title}',
-                                    style: const TextStyle(fontSize: 20),
-                                  ),
-                                ],
+                      const SizedBox(height: 4),
+                      Align(
+                        alignment: const Alignment(0.9, -0.6),
+                        child: IconButton(
+                          icon: Icon(Icons.close),
+                          tooltip: 'Close',
+                          onPressed: () {
+                            context.bloc<AudioPlayerBloc>().stop();
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ),
+                      Container(
+                        child: SizedBox(
+                          width: screenWidth(context),
+                          child: Stack(
+                            children: <Widget>[
+                              Center(
+                                child: Column(
+                                  children: <Widget>[
+                                    Text(
+                                      '${audioFile.artist}',
+                                      style: const TextStyle(fontSize: 28),
+                                      maxLines: 1,
+                                    ),
+                                    const SizedBox(height: 8),
+                                    Text(
+                                      '${audioFile.title}',
+                                      style: const TextStyle(fontSize: 18),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                            Positioned(
-                              top: -15,
-                              left: screenWidth(context) - 110,
-                              child: IconButton(
-                                icon: Icon(Icons.close),
-                                tooltip: 'Close',
-                                onPressed: () {
-                                  context.bloc<AudioPlayerBloc>().stop();
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       const SizedBox(height: 16),
-                      _configireArtwork(context),
+                      _configureArtwork(context),
                       const SizedBox(height: 40),
                       AudioSlider(
                         bloc: context.bloc<AudioPlayerBloc>(),
@@ -140,7 +142,7 @@ class AudioPlayer extends StatelessWidget {
     );
   }
 
-  Widget _configireArtwork(BuildContext context) {
+  Widget _configureArtwork(BuildContext context) {
     if (aspectRatio(context) < 0.5) {
       return Image.network(
         audioFile.artworkUrlPath,
@@ -149,7 +151,7 @@ class AudioPlayer extends StatelessWidget {
     } else {
       return Image.network(
         audioFile.artworkUrlPath,
-        height: screenHeight(context) - 400,
+        height: screenHeight(context) - 450,
         fit: BoxFit.cover,
       );
     }

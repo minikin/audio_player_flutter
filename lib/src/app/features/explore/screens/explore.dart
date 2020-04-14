@@ -1,6 +1,7 @@
 import 'package:audio_player_flutter/src/app/common/widgets/widgets.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/screens/audio_player.dart';
 import 'package:audio_player_flutter/src/app/features/explore/blocs/blocs.dart';
+import 'package:audio_player_flutter/src/app/features/explore/utils/explore_utils.dart';
 import 'package:audio_player_flutter/src/app/features/explore/widgets/explore_item.dart';
 import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:audio_player_flutter/src/services/utils/free_functions.dart';
@@ -39,6 +40,7 @@ class Explore extends StatelessWidget {
   }
 
   Widget _listOfAudioItems(BuildContext context, ExploreState state) {
+    final _aspectRatio = aspectRatio(context);
     return Container(
       color: Colors.white70,
       padding: const EdgeInsets.all(4),
@@ -46,7 +48,8 @@ class Explore extends StatelessWidget {
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: _childAspectRatio(context),
+            mainAxisSpacing: 4,
+            childAspectRatio: childAspectRatio(_aspectRatio),
           ),
           shrinkWrap: true,
           itemCount: state.items.length,
@@ -58,14 +61,6 @@ class Explore extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  double _childAspectRatio(BuildContext context) {
-    if (aspectRatio(context) < 0.5) {
-      return aspectRatio(context) / 0.62;
-    } else {
-      return aspectRatio(context);
-    }
   }
 
   void _showAudioPlayer(BuildContext context, AudioFile audioFile) {

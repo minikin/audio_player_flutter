@@ -12,7 +12,7 @@ const _audioFilesAuthors = [
   'Face Your Thoughts',
   'Drone some D',
   'Dreaming T',
-  'Soundscapes over Sun',
+  'Soundscapes Оver Sun',
   'Hair Brushing',
   'The End',
   'The Doors',
@@ -23,7 +23,7 @@ const _audioFilesAuthors = [
   'White and Black',
   'Hypnosis',
   'Rap Steine',
-  'Dj Vitakic',
+  'Dj Vitalik',
   '2 PAc',
 ];
 
@@ -61,7 +61,7 @@ Future<void> generateMockRelaxItemsJsonFile() async {
 class MockAudioFilesDataSource {
   static List<AudioFile> randomList() {
     return List<AudioFile>.generate(
-        randomIntInRange(200, 300), (index) => _randomAudioFile());
+        randomIntInRange(300, 500), (index) => _randomAudioFile());
   }
 
   static AudioFile _randomAudioFile() {
@@ -79,8 +79,8 @@ class MockAudioFilesDataSource {
         ..artist = authors
         ..artworkUrlPath = artwork
         ..audioFileUrlPath =
-            'https://www.dropbox.com/s/k1gi3f1yvlneyg5/bensound-erf.mp3?dl=1'
-        ..duration = 241000
+            'https://api-flutter-audio-player.herokuapp.com/assets/audio/bensound-erf.mp3'
+        ..duration = 264600
         ..id = Uuid().v4()
         ..title = title,
     );
