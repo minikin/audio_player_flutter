@@ -40,7 +40,7 @@ class ExploreItem extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 audioFile.title,
-                maxLines: 1,
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(fontSize: 16, color: Colors.grey),
               ),
