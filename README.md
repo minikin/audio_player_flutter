@@ -1,11 +1,11 @@
 <h1 align="center">
   <a href="https://github.com/minikin/audio_player_flutter">
-  Apple Music / Tidal Style Audio Player in Flutter.
+  Apple Music / Tidal Style Audio Player for Flutter/Dart.
   </a>
 </h1>
 
 <p align="center">
-  Apple Music / Tidal Style Audio Player for Flutter powered by Streams, Value Types and BLoC.
+  Apple Music / Tidal Style Audio Player for Flutter powered by Dart, Streams, Value Types and BLoC's.
 </p>
 
 <p align="center">
@@ -16,10 +16,16 @@
     <img src="https://app.bitrise.io/app/354f49154884b44e/status.svg?token=fDYsKP7LEgITvjVUVbOS9Q" alt="Current Build Status." />
   </a>
       <a href="https://github.com/minikin/audio_player_flutter">
-    <img src="https://img.shields.io/badge/platform-iOS%20%7C%20Android-orange.svg" alt="Supported platforms" />
+    <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20iPadOS%20%7C%20macOS%20%7C%20Android-orange.svg" alt="Supported platforms" />
   </a>
   <a href="https://github.com/minikin/audio_player_flutter/blob/develop/CONTRIBUTING.md">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
+    <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs welcome!" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/minikin/audio_player_flutter">
+    <img src="https://i.ibb.co/njjv0Ws/audio-player-flutter-demo.png" alt="Apple Music / Tidal Style Audio Player for Flutter/Dart." />
   </a>
 </p>
 
@@ -33,9 +39,10 @@
 
 ## Features
 
-- Apple Music / Tidal style Audio Player
+- Apple Music / Tidal Style Audio Player
+- Supported platforms: iOS, iPadOS, macOS, Android
 - Background audio playback for iOS/Android
-- Audio files fetched from a [remote server](https://github.com/minikin/json_server_for_audio_player_flutter)
+- Audio files fetched and streamed from a [remote server](https://github.com/minikin/json_server_for_audio_player_flutter)
 - Responsive to screen size changes
 - Powered by [build_value](https://pub.dev/packages/built_value) and [built_collection](https://pub.dev/packages/built_collection)
 - State management by [BloC](https://pub.dev/packages/flutter_bloc)s
@@ -43,7 +50,7 @@
 
 ## Requirements
 
-- Flutter: the latest version on `flutter beta channel`
+- Flutter: the latest version on `flutter master channel`
 - Dart: 2.8.0+
 - Xcode: 11.4.0+
 - Androind Studio 3.5.0+
