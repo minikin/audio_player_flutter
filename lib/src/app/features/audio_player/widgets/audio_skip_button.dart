@@ -38,9 +38,9 @@ class AudioSkipButton<S> extends StatelessWidget {
 
   Icon _configureIcon() {
     if (buttonType == AudioSkipButtonType.forward) {
-      return Icon(Icons.fast_forward);
+      return const Icon(Icons.fast_forward);
     } else {
-      return Icon(Icons.fast_rewind);
+      return const Icon(Icons.fast_rewind);
     }
   }
 }

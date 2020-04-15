@@ -37,7 +37,7 @@ class AudioPlayer extends StatelessWidget {
                       Align(
                         alignment: const Alignment(0.9, -0.6),
                         child: IconButton(
-                          icon: Icon(Icons.close),
+                          icon: const Icon(Icons.close),
                           tooltip: 'Close',
                           onPressed: () {
                             context.bloc<AudioPlayerBloc>().stop();

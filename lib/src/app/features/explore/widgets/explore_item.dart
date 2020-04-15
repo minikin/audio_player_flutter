@@ -28,10 +28,13 @@ class ExploreItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Expanded(
-                  child: FadeInImage.memoryNetwork(
-                    image: audioFile.artworkUrlPath,
-                    placeholder: kTransparentImage,
-                    fit: BoxFit.fill,
+                  child: Container(
+                    color: Colors.white,
+                    child: FadeInImage.memoryNetwork(
+                      image: audioFile.artworkUrlPath,
+                      placeholder: kTransparentImage,
+                      fit: BoxFit.scaleDown,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -47,10 +50,10 @@ class ExploreItem extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   audioFile.title,
-                  maxLines: 2,
+                  maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: Colors.grey,
                   ),
                 ),
