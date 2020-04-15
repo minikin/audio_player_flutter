@@ -1,11 +1,11 @@
 <h1 align="center">
   <a href="https://github.com/minikin/audio_player_flutter">
-  Apple Music / Tidal Style Audio Player in Flutter/Dart.
+  Apple Music / Tidal Style Audio Player for Flutter/Dart.
   </a>
 </h1>
 
 <p align="center">
-  Apple Music / Tidal Style Audio Player for Flutter powered by Dart, Streams, Value Types and BLoC.
+  Apple Music / Tidal Style Audio Player for Flutter powered by Dart, Streams, Value Types and BLoC's.
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@
 - Apple Music / Tidal Style Audio Player
 - Supported platforms: iOS, iPadOS, macOS, Android
 - Background audio playback for iOS/Android
-- Audio files fetched from a [remote server](https://github.com/minikin/json_server_for_audio_player_flutter)
+- Audio files fetch and stream from a [remote server](https://github.com/minikin/json_server_for_audio_player_flutter)
 - Responsive to screen size changes
 - Powered by [build_value](https://pub.dev/packages/built_value) and [built_collection](https://pub.dev/packages/built_collection)
 - State management by [BloC](https://pub.dev/packages/flutter_bloc)s
