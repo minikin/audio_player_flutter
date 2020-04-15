@@ -1,7 +1,6 @@
 import 'package:audio_player_flutter/src/app/common/widgets/widgets.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/screens/audio_player.dart';
 import 'package:audio_player_flutter/src/app/features/explore/blocs/blocs.dart';
-import 'package:audio_player_flutter/src/app/features/explore/utils/explore_utils.dart';
 import 'package:audio_player_flutter/src/app/features/explore/widgets/explore_item.dart';
 import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:audio_player_flutter/src/services/utils/free_functions.dart';
@@ -40,16 +39,15 @@ class Explore extends StatelessWidget {
   }
 
   Widget _listOfAudioItems(BuildContext context, ExploreState state) {
-    final _aspectRatio = aspectRatio(context);
+    final _screenWidth = screenWidth(context);
     return Container(
       color: Colors.white70,
       padding: const EdgeInsets.all(4),
       child: Scrollbar(
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+            crossAxisCount: (_screenWidth >= 600) ? 4 : 2,
             mainAxisSpacing: 4,
-            childAspectRatio: childAspectRatio(_aspectRatio),
           ),
           shrinkWrap: true,
           itemCount: state.items.length,
