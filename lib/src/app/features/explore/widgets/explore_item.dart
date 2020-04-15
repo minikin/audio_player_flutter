@@ -1,5 +1,6 @@
 import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class ExploreItem extends StatelessWidget {
   final AudioFile audioFile;
@@ -22,29 +23,39 @@ class ExploreItem extends StatelessWidget {
         margin: const EdgeInsets.all(4),
         child: Padding(
           padding: const EdgeInsets.all(4),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Image.network(
-                audioFile.artworkUrlPath,
-                fit: BoxFit.cover,
-              ),
-              const SizedBox(height: 8),
-              Text(
-                audioFile.artist,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 4),
-              Text(
-                audioFile.title,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontSize: 16, color: Colors.grey),
-              ),
-            ],
+          child: IntrinsicHeight(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Expanded(
+                  child: FadeInImage.memoryNetwork(
+                    image: audioFile.artworkUrlPath,
+                    placeholder: kTransparentImage,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  audioFile.artist,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  audioFile.title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

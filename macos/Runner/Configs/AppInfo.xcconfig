@@ -5,7 +5,8 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = Audio Player Flutter
+// Apple Music / Tidal Style Audio Player in Flutter
+PRODUCT_NAME = apple_music_flutter
 
 // The application's bundle identifier
 PRODUCT_BUNDLE_IDENTIFIER = me.minikin.audioPlayerFlutter

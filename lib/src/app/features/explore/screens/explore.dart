@@ -46,7 +46,7 @@ class Explore extends StatelessWidget {
       child: Scrollbar(
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: (_screenWidth >= 600) ? 4 : 2,
+            crossAxisCount: (_screenWidth >= 800) ? 4 : 2,
             mainAxisSpacing: 4,
           ),
           shrinkWrap: true,
