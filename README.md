@@ -29,6 +29,12 @@
   </a>
 </p>
 
+<h1 align="center">
+  <a href="https://youtu.be/R0O1dx6Ujyg" target="_blank">
+  Demo on Youtube
+  </a>
+</h1
+
 # Content
 
 - [Features](#-features)
@@ -53,7 +59,7 @@
 - Flutter: the latest version on `flutter master channel`
 - Dart: 2.8.0+
 - Xcode: 11.4.0+
-- Androind Studio 3.5.0+
+- Androind Studio 3.6.0+
 - Ruby: 2.6.0+
 - CocoaPods: 1.8.4+
 - Flutter & Dart plugins:
@@ -73,7 +79,7 @@ If you have any questions ping me on twitter: [@minikin](https://twitter.com/min
 ## License
 
 The source code of Audio Player project is available under the MIT license.
-See the [LICENSE](https://github.com/minikin/flutter-web-demo/blob/master/LICENSE) file for more info.
+See the [LICENSE](https://github.com/minikin/audio_player_flutter/blob/develop/LICENSE) file for more info.
 
 Audio/Music Copyright & License: [Benjamin Tissot (also known as Bensound)](https://www.bensound.com/royalty-free-music/track/erf)
 
