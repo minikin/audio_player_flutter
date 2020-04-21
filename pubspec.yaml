@@ -9,7 +9,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  animations: ^1.0.0+5
   audioplayers: ^0.15.1
   built_collection: ^4.3.2
   built_value: ^7.0.9
