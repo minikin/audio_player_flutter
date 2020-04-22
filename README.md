@@ -37,11 +37,11 @@
 
 # Content
 
-- [Features](#-features)
-- [Requirements](#-requirements)
-- [Develop](#-develop)
-- [FAQ](#-faq)
-- [License](#-license)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Develop](#develop)
+- [FAQ](#faq)
+- [License](#license)
 
 ## Features
 
