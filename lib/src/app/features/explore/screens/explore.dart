@@ -22,10 +22,15 @@ class Explore extends StatelessWidget {
               // Do nothing
             },
             builder: (context, state) {
+              print(state);
               if (state.initial) {
                 BlocProvider.of<ExploreBloc>(context).add(
                   FetchAudioItems(),
                 );
+              }
+
+              if (state.hasError) {
+                return _errorMesage(state.error);
               }
 
               return state.hasData
@@ -34,6 +39,28 @@ class Explore extends StatelessWidget {
             },
           );
         },
+      ),
+    );
+  }
+
+  Widget _errorMesage(String error) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'Error $error',
+            style: TextStyle(color: Colors.red, fontSize: 34),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            '''The server is down.\nPlease, deploy JSON API to your Heroku account.''',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.black, fontSize: 16),
+          ),
+        ],
       ),
     );
   }
