@@ -18,7 +18,7 @@ class ApiRepository {
 
       return await apiService.fetchAllTunes();
     } on NetworkError catch (error) {
-      throw NetworkError('$error');
+      throw NetworkError('${error.message}');
     }
   }
 }
