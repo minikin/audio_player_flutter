@@ -12,8 +12,8 @@
   <a href="https://github.com/minikin/audio_player_flutter/blob/develop/LICENSE">
     <img src="https://img.shields.io/badge/Source%20Code%20License-MIT-orange.svg" alt="Audio Player source code is released under the MIT license." />
   </a>
-  <a href="https://app.bitrise.io/app/354f49154884b44e#/builds">
-    <img src="https://app.bitrise.io/app/354f49154884b44e/status.svg?token=fDYsKP7LEgITvjVUVbOS9Q" alt="Current Build Status." />
+  <a href="https://github.com/minikin/audio_player_flutter/actions?query=workflow%3ACI">
+    <img src="https://github.com/minikin/audio_player_flutter/workflows/CI/badge.svg" alt="Current Build Status." />
   </a>
       <a href="https://github.com/minikin/audio_player_flutter">
     <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20iPadOS%20%7C%20macOS%20%7C%20Android-orange.svg" alt="Supported platforms" />
