@@ -52,10 +52,10 @@ class Explore extends StatelessWidget {
         children: [
           Text(
             'Error $error',
-            style: TextStyle(color: Colors.red, fontSize: 34),
+            style: const TextStyle(color: Colors.red, fontSize: 34),
           ),
           const SizedBox(height: 8),
-          Text(
+          const Text(
             '''The server is down.\nPlease, deploy JSON API to your Heroku account.''',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.black, fontSize: 16),
