@@ -1,4 +1,4 @@
-name: Dart CI
+name: CI
 
 on:
   push:
@@ -23,5 +23,5 @@ jobs:
       run: flutter pub get
     - name: Analyzing project
       run: flutter analyze
-    - name: Run tests
-      run: flutter test test/all.dart
+#     - name: Run tests
+#       run: flutter test test/all.dart
