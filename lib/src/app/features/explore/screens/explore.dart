@@ -22,7 +22,6 @@ class Explore extends StatelessWidget {
               // Do nothing
             },
             builder: (context, state) {
-              print(state);
               if (state.initial) {
                 BlocProvider.of<ExploreBloc>(context).add(
                   FetchAudioItems(),
