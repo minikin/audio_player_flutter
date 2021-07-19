@@ -40,7 +40,7 @@
 - [Features](#features)
 - [Requirements](#requirements)
 - [Develop](#develop)
-- [FAQ](#faq)
+- [Support](#support)
 - [License](#license)
 
 ## Features
@@ -72,9 +72,10 @@
 git clone https://github.com/minikin/audio_player_flutter.git && cd audio_player_flutter
 ```
 
-## FAQ
 
-If you have any questions ping me on twitter: [@minikin](https://twitter.com/minikin)
+## Support
+
+Post issues and feature requests on the GitHub [issue tracker](https://github.com/minikin/audio_player_flutter/issues).
 
 ## License
 
