@@ -9,8 +9,8 @@ class ResponsiveSafeArea extends StatelessWidget {
   final ResponsiveBuilder responsiveBuilder;
 
   const ResponsiveSafeArea({
-    @required ResponsiveBuilder builder,
-    Key key,
+    required ResponsiveBuilder builder,
+    Key? key,
   })  : responsiveBuilder = builder,
         super(key: key);
 
