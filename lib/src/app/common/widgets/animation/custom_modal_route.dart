@@ -3,25 +3,25 @@ import 'package:flutter/material.dart';
 class CustomModalRoute extends PopupRoute<Widget> {
   final WidgetBuilder builder;
   final bool dismissible;
-  final String label;
-  final Color color;
+  final String? label;
+  final Color? color;
 
   CustomModalRoute({
-    @required this.builder,
+    required this.builder,
     this.dismissible = true,
     this.label,
     this.color,
-    RouteSettings setting,
+    RouteSettings? setting,
   }) : super(settings: setting);
 
   @override
-  Color get barrierColor => color;
+  Color get barrierColor => color!;
 
   @override
   bool get barrierDismissible => dismissible;
 
   @override
-  String get barrierLabel => label;
+  String get barrierLabel => label!;
 
   @override
   Duration get transitionDuration => const Duration(milliseconds: 300);

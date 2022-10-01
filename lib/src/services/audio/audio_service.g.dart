@@ -10,13 +10,12 @@ class _$AudioService extends AudioService {
   @override
   final AudioPlayer audioPlayer;
 
-  factory _$AudioService([void Function(AudioServiceBuilder) updates]) =>
-      (new AudioServiceBuilder()..update(updates)).build();
+  factory _$AudioService([void Function(AudioServiceBuilder)? updates]) =>
+      (new AudioServiceBuilder()..update(updates))._build();
 
-  _$AudioService._({this.audioPlayer}) : super._() {
-    if (audioPlayer == null) {
-      throw new BuiltValueNullFieldError('AudioService', 'audioPlayer');
-    }
+  _$AudioService._({required this.audioPlayer}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        audioPlayer, r'AudioService', 'audioPlayer');
   }
 
   @override
@@ -39,7 +38,7 @@ class _$AudioService extends AudioService {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AudioService')
+    return (newBuiltValueToStringHelper(r'AudioService')
           ..add('audioPlayer', audioPlayer))
         .toString();
   }
@@ -47,17 +46,19 @@ class _$AudioService extends AudioService {
 
 class AudioServiceBuilder
     implements Builder<AudioService, AudioServiceBuilder> {
-  _$AudioService _$v;
+  _$AudioService? _$v;
 
-  AudioPlayer _audioPlayer;
-  AudioPlayer get audioPlayer => _$this._audioPlayer;
-  set audioPlayer(AudioPlayer audioPlayer) => _$this._audioPlayer = audioPlayer;
+  AudioPlayer? _audioPlayer;
+  AudioPlayer? get audioPlayer => _$this._audioPlayer;
+  set audioPlayer(AudioPlayer? audioPlayer) =>
+      _$this._audioPlayer = audioPlayer;
 
   AudioServiceBuilder();
 
   AudioServiceBuilder get _$this {
-    if (_$v != null) {
-      _audioPlayer = _$v.audioPlayer;
+    final $v = _$v;
+    if ($v != null) {
+      _audioPlayer = $v.audioPlayer;
       _$v = null;
     }
     return this;
@@ -65,23 +66,26 @@ class AudioServiceBuilder
 
   @override
   void replace(AudioService other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AudioService;
   }
 
   @override
-  void update(void Function(AudioServiceBuilder) updates) {
+  void update(void Function(AudioServiceBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$AudioService build() {
-    final _$result = _$v ?? new _$AudioService._(audioPlayer: audioPlayer);
+  AudioService build() => _build();
+
+  _$AudioService _build() {
+    final _$result = _$v ??
+        new _$AudioService._(
+            audioPlayer: BuiltValueNullFieldError.checkNotNull(
+                audioPlayer, r'AudioService', 'audioPlayer'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

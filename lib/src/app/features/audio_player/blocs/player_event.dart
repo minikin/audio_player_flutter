@@ -40,10 +40,12 @@ abstract class StopEvent extends PlayerEvent
 
 class SeekEvent extends PlayerEvent {
   final int seekToPosition;
-  SeekEvent({this.seekToPosition});
+
+  SeekEvent({required this.seekToPosition});
 }
 
 class TickEvent extends PlayerEvent {
   final int position;
+
   TickEvent({this.position = 0});
 }

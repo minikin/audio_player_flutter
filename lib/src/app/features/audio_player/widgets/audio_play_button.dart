@@ -8,13 +8,13 @@ class AudioPlayButton<S> extends StatelessWidget {
   final Stream<S> stream;
   final VoidCallback onPressed;
 
-  AudioPlayButton({
-    Key key,
-    @required this.playerState,
-    @required this.onPressed,
-    @required this.stream,
+  const AudioPlayButton({
+    required this.playerState,
+    required this.onPressed,
+    required this.stream,
     this.activeColor = Colors.black,
     this.disabledColor = Colors.grey,
+    Key? key,
   }) : super(key: key);
 
   @override

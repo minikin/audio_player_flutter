@@ -8,13 +8,13 @@ class AudioSkipButton<S> extends StatelessWidget {
   final Stream<S> stream;
   final VoidCallback onPressed;
 
-  AudioSkipButton({
-    @required this.buttonType,
-    @required this.onPressed,
-    @required this.stream,
+  const AudioSkipButton({
+    required this.buttonType,
+    required this.onPressed,
+    required this.stream,
     this.activeColor = Colors.black,
     this.disabledColor = Colors.grey,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

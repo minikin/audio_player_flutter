@@ -13,8 +13,11 @@ class JsonStorage {
     return directory.path;
   }
 
-  Future<void> writeJson(String data, {FileMode mode = FileMode.write}) async {
+  Future<void> writeJson(
+    String data, {
+    FileMode mode = FileMode.write,
+  }) async {
     final file = await _localFile;
-    return file.writeAsString(data, mode: mode);
+    file.writeAsString(data, mode: mode);
   }
 }

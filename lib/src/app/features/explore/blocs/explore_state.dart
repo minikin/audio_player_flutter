@@ -3,7 +3,6 @@ library explore_state;
 import 'package:audio_player_flutter/src/services/services.dart' show AudioFile;
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
-import 'package:flutter/foundation.dart';
 
 part 'explore_state.g.dart';
 
@@ -22,7 +21,7 @@ abstract class ExploreState
     );
   }
 
-  factory ExploreState.failure({@required String error}) {
+  factory ExploreState.failure({required String error}) {
     return ExploreState(
       (b) => b
         ..isLoading = false
@@ -52,7 +51,7 @@ abstract class ExploreState
     );
   }
 
-  factory ExploreState.success({@required BuiltList<AudioFile> items}) {
+  factory ExploreState.success({required BuiltList<AudioFile> items}) {
     return ExploreState(
       (b) => b
         ..isLoading = false

@@ -16,23 +16,20 @@ class _$ExploreState extends ExploreState {
   @override
   final BuiltList<AudioFile> items;
 
-  factory _$ExploreState([void Function(ExploreStateBuilder) updates]) =>
-      (new ExploreStateBuilder()..update(updates)).build();
+  factory _$ExploreState([void Function(ExploreStateBuilder)? updates]) =>
+      (new ExploreStateBuilder()..update(updates))._build();
 
-  _$ExploreState._({this.error, this.initial, this.isLoading, this.items})
+  _$ExploreState._(
+      {required this.error,
+      required this.initial,
+      required this.isLoading,
+      required this.items})
       : super._() {
-    if (error == null) {
-      throw new BuiltValueNullFieldError('ExploreState', 'error');
-    }
-    if (initial == null) {
-      throw new BuiltValueNullFieldError('ExploreState', 'initial');
-    }
-    if (isLoading == null) {
-      throw new BuiltValueNullFieldError('ExploreState', 'isLoading');
-    }
-    if (items == null) {
-      throw new BuiltValueNullFieldError('ExploreState', 'items');
-    }
+    BuiltValueNullFieldError.checkNotNull(error, r'ExploreState', 'error');
+    BuiltValueNullFieldError.checkNotNull(initial, r'ExploreState', 'initial');
+    BuiltValueNullFieldError.checkNotNull(
+        isLoading, r'ExploreState', 'isLoading');
+    BuiltValueNullFieldError.checkNotNull(items, r'ExploreState', 'items');
   }
 
   @override
@@ -61,7 +58,7 @@ class _$ExploreState extends ExploreState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ExploreState')
+    return (newBuiltValueToStringHelper(r'ExploreState')
           ..add('error', error)
           ..add('initial', initial)
           ..add('isLoading', isLoading)
@@ -72,33 +69,34 @@ class _$ExploreState extends ExploreState {
 
 class ExploreStateBuilder
     implements Builder<ExploreState, ExploreStateBuilder> {
-  _$ExploreState _$v;
+  _$ExploreState? _$v;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  bool _initial;
-  bool get initial => _$this._initial;
-  set initial(bool initial) => _$this._initial = initial;
+  bool? _initial;
+  bool? get initial => _$this._initial;
+  set initial(bool? initial) => _$this._initial = initial;
 
-  bool _isLoading;
-  bool get isLoading => _$this._isLoading;
-  set isLoading(bool isLoading) => _$this._isLoading = isLoading;
+  bool? _isLoading;
+  bool? get isLoading => _$this._isLoading;
+  set isLoading(bool? isLoading) => _$this._isLoading = isLoading;
 
-  ListBuilder<AudioFile> _items;
+  ListBuilder<AudioFile>? _items;
   ListBuilder<AudioFile> get items =>
       _$this._items ??= new ListBuilder<AudioFile>();
-  set items(ListBuilder<AudioFile> items) => _$this._items = items;
+  set items(ListBuilder<AudioFile>? items) => _$this._items = items;
 
   ExploreStateBuilder();
 
   ExploreStateBuilder get _$this {
-    if (_$v != null) {
-      _error = _$v.error;
-      _initial = _$v.initial;
-      _isLoading = _$v.isLoading;
-      _items = _$v.items?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _error = $v.error;
+      _initial = $v.initial;
+      _isLoading = $v.isLoading;
+      _items = $v.items.toBuilder();
       _$v = null;
     }
     return this;
@@ -106,35 +104,38 @@ class ExploreStateBuilder
 
   @override
   void replace(ExploreState other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ExploreState;
   }
 
   @override
-  void update(void Function(ExploreStateBuilder) updates) {
+  void update(void Function(ExploreStateBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ExploreState build() {
+  ExploreState build() => _build();
+
+  _$ExploreState _build() {
     _$ExploreState _$result;
     try {
       _$result = _$v ??
           new _$ExploreState._(
-              error: error,
-              initial: initial,
-              isLoading: isLoading,
+              error: BuiltValueNullFieldError.checkNotNull(
+                  error, r'ExploreState', 'error'),
+              initial: BuiltValueNullFieldError.checkNotNull(
+                  initial, r'ExploreState', 'initial'),
+              isLoading: BuiltValueNullFieldError.checkNotNull(
+                  isLoading, r'ExploreState', 'isLoading'),
               items: items.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'items';
         items.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'ExploreState', _$failedField, e.toString());
+            r'ExploreState', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -143,4 +144,4 @@ class ExploreStateBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

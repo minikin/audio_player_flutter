@@ -10,7 +10,6 @@ class AudioPlayerBloc extends Bloc<PlayerEvent, PlayerState> {
   bool _isPlayed = false;
   bool _isDisposed = false;
 
-  @override
   PlayerState get initialState => PlayerState.stopped();
 
   double get trackPosition => _trackPosition.toDouble();

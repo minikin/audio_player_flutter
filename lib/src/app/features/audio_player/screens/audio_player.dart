@@ -12,7 +12,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AudioPlayer extends StatelessWidget {
   final AudioFile audioFile;
 
-  const AudioPlayer({@required this.audioFile, Key key}) : super(key: key);
+  const AudioPlayer({
+    required this.audioFile,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

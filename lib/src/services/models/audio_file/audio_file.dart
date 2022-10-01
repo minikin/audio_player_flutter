@@ -16,7 +16,6 @@ abstract class AudioFile implements Built<AudioFile, AudioFileBuilder> {
 
   AudioFile._();
 
-  @nullable
   String get artist;
 
   String get artworkUrlPath;
@@ -33,10 +32,10 @@ abstract class AudioFile implements Built<AudioFile, AudioFileBuilder> {
     return json.encode(serializers.serializeWith(AudioFile.serializer, this));
   }
 
-  static AudioFile fromJson(String jsonString) {
-    return serializers.deserializeWith(
-        AudioFile.serializer, json.decode(jsonString));
-  }
+  // static AudioFile fromJson(String jsonString) {
+  //   return serializers.deserializeWith(
+  //       AudioFile.serializer, json.decode(jsonString));
+  // }
 
   static String listOfAudioFilesToJson(List<AudioFile> audioFiles) {
     final data = <String>[];

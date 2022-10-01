@@ -7,9 +7,9 @@ class ExploreItem extends StatelessWidget {
   final ValueChanged<AudioFile> onItemTapped;
 
   const ExploreItem({
-    @required this.audioFile,
-    @required this.onItemTapped,
-    Key key,
+    required this.audioFile,
+    required this.onItemTapped,
+    Key? key,
   }) : super(key: key);
 
   @override

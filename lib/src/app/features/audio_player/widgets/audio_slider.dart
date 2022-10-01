@@ -8,9 +8,9 @@ class AudioSlider extends StatelessWidget {
   final AudioPlayerBloc bloc;
 
   const AudioSlider({
-    @required this.audioFile,
-    @required this.bloc,
-    Key key,
+    required this.audioFile,
+    required this.bloc,
+    Key? key,
   }) : super(key: key);
 
   @override
