@@ -32,17 +32,18 @@ abstract class AudioFile implements Built<AudioFile, AudioFileBuilder> {
     return json.encode(serializers.serializeWith(AudioFile.serializer, this));
   }
 
-  // static AudioFile fromJson(String jsonString) {
-  //   return serializers.deserializeWith(
-  //       AudioFile.serializer, json.decode(jsonString));
-  // }
+  static AudioFile? fromJson(String jsonString) {
+    return serializers.deserializeWith(
+      AudioFile.serializer,
+      json.decode(jsonString),
+    );
+  }
 
   static String listOfAudioFilesToJson(List<AudioFile> audioFiles) {
     final data = <String>[];
-    audioFiles.forEach((item) {
-      final json = item.toJson();
-      data.add(json);
-    });
+    for (var item in audioFiles) {
+      data.add(item.toJson());
+    }
     return '$data';
   }
 

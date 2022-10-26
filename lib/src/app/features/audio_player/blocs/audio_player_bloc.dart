@@ -53,7 +53,9 @@ class AudioPlayerBloc extends Bloc<PlayerEvent, PlayerState> {
     } else {
       _trackPosition = _trackPosition - 15000;
     }
-    Current.audioService.seekTo(Duration(milliseconds: _trackPosition.toInt()));
+    Current.audioService.seekTo(
+      Duration(milliseconds: _trackPosition.toInt()),
+    );
   }
 
   void stop() => add(StopEvent((b) => b));

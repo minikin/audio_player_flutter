@@ -39,11 +39,12 @@
 
 # Content
 
-- [Features](#features)
-- [Requirements](#requirements)
-- [Develop](#develop)
-- [Support](#support)
-- [License](#license)
+- [Content](#content)
+  - [Features](#features)
+  - [Requirements](#requirements)
+  - [Develop](#develop)
+  - [Support](#support)
+  - [License](#license)
 
 ## Features
 
@@ -58,12 +59,8 @@
 
 ## Requirements
 
-- Flutter: the latest version on `flutter master channel`
+- Flutter 3.3.0+
 - Dart: 2.8.0+
-- Xcode: 11.4.0+
-- Androind Studio 3.6.0+
-- Ruby: 2.6.0+
-- CocoaPods: 1.8.4+
 - Flutter & Dart plugins:
   - [Visual Studio Code](https://flutter.dev/docs/get-started/editor?tab=androidstudio)
   - [Android Studio / IntelliJ](https://flutter.dev/docs/get-started/editor?tab=vscode)
@@ -73,7 +70,6 @@
 ```sh
 git clone https://github.com/minikin/audio_player_flutter.git && cd audio_player_flutter
 ```
-
 
 ## Support
 

@@ -5,8 +5,8 @@ import 'package:built_value/built_value.dart';
 
 part 'environment.g.dart';
 
-// ignore: non_constant_identifier_names, type_annotate_public_apis
-Environment Current;
+// ignore: non_constant_identifier_names
+late Environment Current;
 
 abstract class Environment implements Built<Environment, EnvironmentBuilder> {
   factory Environment([void Function(EnvironmentBuilder) updates]) =

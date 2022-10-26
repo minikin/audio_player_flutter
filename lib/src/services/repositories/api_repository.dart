@@ -4,10 +4,10 @@ import 'package:audio_player_flutter/src/services/networking/network_checker.dar
 import 'package:built_collection/built_collection.dart';
 
 class ApiRepository {
-  ApiService apiService;
+  final ApiService apiService;
 
   ApiRepository({
-    required this.apiService,
+    ApiService? apiService,
   }) : apiService = apiService ?? ApiService();
 
   Future<BuiltList<AudioFile>> fetchAllTunes() async {
@@ -19,7 +19,7 @@ class ApiRepository {
 
       return await apiService.fetchAllTunes();
     } on NetworkError catch (error) {
-      throw NetworkError('${error.message}');
+      throw NetworkError(error.message);
     }
   }
 }

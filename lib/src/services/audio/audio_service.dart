@@ -3,7 +3,6 @@ library audio_service;
 import 'package:audio_player_flutter/src/services/models/audio_file/audio_file.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:built_value/built_value.dart';
-import 'package:flutter/foundation.dart' show required;
 
 part 'audio_service.g.dart';
 
@@ -18,12 +17,12 @@ abstract class AudioService
 
   void dispose() => audioPlayer.dispose();
 
-  Stream<Duration> onProgress() => audioPlayer.onAudioPositionChanged;
+  Stream<Duration> onProgress() => audioPlayer.onPositionChanged;
 
   void pauseAudio() async => await audioPlayer.pause();
 
-  void playAudio({@required AudioFile audioFile}) async {
-    await audioPlayer.play(audioFile.audioFileUrlPath);
+  void playAudio({required AudioFile audioFile}) async {
+    await audioPlayer.play(UrlSource(audioFile.audioFileUrlPath));
   }
 
   void resumeAudio() async => await audioPlayer.resume();

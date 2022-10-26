@@ -48,29 +48,27 @@ class AudioPlayer extends StatelessWidget {
                           },
                         ),
                       ),
-                      Container(
-                        child: SizedBox(
-                          width: screenWidth(context),
-                          child: Stack(
-                            children: <Widget>[
-                              Center(
-                                child: Column(
-                                  children: <Widget>[
-                                    Text(
-                                      '${audioFile.artist}',
-                                      style: const TextStyle(fontSize: 28),
-                                      maxLines: 1,
-                                    ),
-                                    const SizedBox(height: 8),
-                                    Text(
-                                      '${audioFile.title}',
-                                      style: const TextStyle(fontSize: 18),
-                                    ),
-                                  ],
-                                ),
+                      SizedBox(
+                        width: screenWidth(context),
+                        child: Stack(
+                          children: <Widget>[
+                            Center(
+                              child: Column(
+                                children: <Widget>[
+                                  Text(
+                                    audioFile.artist,
+                                    style: const TextStyle(fontSize: 28),
+                                    maxLines: 1,
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    audioFile.title,
+                                    style: const TextStyle(fontSize: 18),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(height: 16),

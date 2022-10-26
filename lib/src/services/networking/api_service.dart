@@ -11,14 +11,14 @@ class ApiService {
   final http.Client client;
 
   ApiService({
-    HttpClient client,
-    Map<String, Object> cache,
+    http.Client? client,
+    Map<String, Object>? cache,
   })  : client = client ?? http.Client(),
         cache = cache ?? <String, Object>{};
 
   Future<BuiltList<AudioFile>> fetchAllTunes() async {
     final response = await client.get(
-      '$_baseUrl/tunes',
+      Uri.parse('$_baseUrl/tunes'),
       headers: {
         HttpHeaders.acceptHeader: '*/*',
         HttpHeaders.cacheControlHeader: 'no-cache',
@@ -26,7 +26,7 @@ class ApiService {
         HttpHeaders.authorizationHeader: 'Bearer account.accessToken'
       },
     );
-    print('Api Service: fetch AudioFile: ${response.statusCode}');
+
     if (response.statusCode == 200) {
       return compute(AudioFile.parseListOfAudioFiles, response.body);
     } else {

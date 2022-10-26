@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:audio_player_flutter/src/app/app.dart';
-import 'package:audio_player_flutter/src/app/common/blocs/app_bloc_delegate.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/blocs/blocs.dart';
 import 'package:audio_player_flutter/src/app/features/explore/blocs/blocs.dart';
 import 'package:audio_player_flutter/src/configurations/environment/environment.dart';
@@ -15,8 +14,6 @@ void configureApp() {
   runZoned<Future<void>>(
     () async {
       Current = await Environment.current();
-
-      BlocSupervisor.delegate = AppBlocDelegate();
 
       await SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp,
