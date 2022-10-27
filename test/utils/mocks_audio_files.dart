@@ -1,4 +1,4 @@
-import 'package:audio_player_flutter/src/services/models/audio_file/audio_file.dart';
+import 'package:audio_player_flutter/src/services/models/audio_file/_audio_file.dart';
 import 'package:audio_player_flutter/src/services/persistance/json_storage.dart';
 import 'package:uuid/uuid.dart';
 
