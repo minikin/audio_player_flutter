@@ -85,7 +85,7 @@ class AudioPlayer extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              mediaTimeFormarter(
+                              mediaTimeFormatter(
                                 Duration(
                                   milliseconds: context
                                       .bloc<AudioPlayerBloc>()
@@ -96,7 +96,7 @@ class AudioPlayer extends StatelessWidget {
                               style: const TextStyle(color: Colors.grey),
                             ),
                             Text(
-                              mediaTimeFormarter(
+                              mediaTimeFormatter(
                                 Duration(milliseconds: audioFile.duration),
                               ),
                               style: const TextStyle(color: Colors.grey),
