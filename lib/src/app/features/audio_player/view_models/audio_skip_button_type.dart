@@ -3,8 +3,6 @@ library audio_skip_button_type;
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 
-part 'audio_skip_button_type.g.dart';
-
 class AudioSkipButtonType extends EnumClass {
   static const AudioSkipButtonType rewind = _$rewind;
   static const AudioSkipButtonType forward = _$forward;

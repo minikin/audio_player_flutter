@@ -1,39 +1,26 @@
 library audio_service;
 
-import 'package:audio_player_flutter/src/services/models/audio_file/_audio_file.dart';
+import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:built_value/built_value.dart';
 
-part 'audio_service.g.dart';
+class AudioService {
+  final AudioPlayer audioPlayer;
 
-abstract class AudioService
-    implements Built<AudioService, AudioServiceBuilder> {
-  factory AudioService([void Function(AudioServiceBuilder) updates]) =
-      _$AudioService;
+  const AudioService({required this.audioPlayer});
 
-  AudioService._();
+  void get dispose => audioPlayer.dispose();
 
-  AudioPlayer get audioPlayer;
+  void get pause async => await audioPlayer.pause();
 
-  void dispose() => audioPlayer.dispose();
+  void get resume async => await audioPlayer.resume();
+
+  void get stop async => await audioPlayer.stop();
 
   Stream<Duration> onProgress() => audioPlayer.onPositionChanged;
 
-  void pauseAudio() async => await audioPlayer.pause();
-
-  void playAudio({required AudioFile audioFile}) async {
+  void play({required AudioFile audioFile}) async {
     await audioPlayer.play(UrlSource(audioFile.audioFileUrlPath));
   }
 
-  void resumeAudio() async => await audioPlayer.resume();
-
   void seekTo(Duration position) async => await audioPlayer.seek(position);
-
-  void stopAudio() async => await audioPlayer.stop();
-
-  static AudioService init() {
-    final audioService = AudioService((b) => b..audioPlayer = AudioPlayer());
-    audioService.onProgress();
-    return audioService;
-  }
 }

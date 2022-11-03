@@ -1,5 +1,5 @@
 import 'package:audio_player_flutter/src/app/features/audio_player/blocs/blocs.dart';
-import 'package:audio_player_flutter/src/app/features/audio_player/models/audio_skip_button_type.dart';
+import 'package:audio_player_flutter/src/app/features/audio_player/view_models/audio_skip_button_type.dart';
 import 'package:audio_player_flutter/src/configurations/environment/environment.dart';
 import 'package:audio_player_flutter/src/services/services.dart' show AudioFile;
 import 'package:flutter_bloc/flutter_bloc.dart';
