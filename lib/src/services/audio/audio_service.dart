@@ -6,7 +6,9 @@ import 'package:audioplayers/audioplayers.dart';
 class AudioService {
   final AudioPlayer audioPlayer;
 
-  const AudioService({required this.audioPlayer});
+  AudioService({
+    AudioPlayer? audioPlayer,
+  }) : audioPlayer = audioPlayer ?? AudioPlayer();
 
   void get dispose => audioPlayer.dispose();
 

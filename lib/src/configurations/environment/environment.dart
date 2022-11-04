@@ -1,28 +1,23 @@
 library environment;
 
 import 'package:audio_player_flutter/src/services/services.dart';
-import 'package:built_value/built_value.dart';
-
-part 'environment.g.dart';
 
 // ignore: non_constant_identifier_names
 late Environment Current;
 
-abstract class Environment implements Built<Environment, EnvironmentBuilder> {
-  factory Environment([void Function(EnvironmentBuilder) updates]) =
-      _$Environment;
+class Environment {
+  static final Environment _instance = Environment._(
+    apiRepository: ApiRepository(),
+    audioService: AudioService(),
+  );
 
-  Environment._();
+  final ApiRepository apiRepository;
+  final AudioService audioService;
 
-  ApiRepository get apiRepository;
+  factory Environment() => _instance;
 
-  AudioService get audioService;
-
-  static Future<Environment> current() async {
-    return Environment(
-      (b) => b
-        ..apiRepository = ApiRepository()
-        ..audioService = AudioService.init().toBuilder(),
-    );
-  }
+  const Environment._({
+    required this.apiRepository,
+    required this.audioService,
+  });
 }

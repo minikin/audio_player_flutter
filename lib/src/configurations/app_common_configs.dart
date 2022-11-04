@@ -13,7 +13,7 @@ void configureApp() {
 
   runZoned<Future<void>>(
     () async {
-      Current = await Environment.current();
+      Current = Environment();
 
       await SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp,
