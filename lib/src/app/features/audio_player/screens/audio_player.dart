@@ -1,6 +1,6 @@
 import 'package:audio_player_flutter/src/app/common/widgets/widgets.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/blocs/blocs.dart';
-import 'package:audio_player_flutter/src/app/features/audio_player/view_models/audio_skip_button_type.dart';
+import 'package:audio_player_flutter/src/app/features/audio_player/view_models/audio_skip_button_view_model.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/widgets/audio_play_button.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/widgets/audio_skip_button.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/widgets/audio_slider.dart';

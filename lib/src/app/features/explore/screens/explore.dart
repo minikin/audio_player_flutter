@@ -24,12 +24,12 @@ class Explore extends StatelessWidget {
             builder: (context, state) {
               if (state.initial) {
                 BlocProvider.of<ExploreBloc>(context).add(
-                  FetchAudioItems(),
+                  const FetchAudioItems(),
                 );
               }
 
-              if (state.hasError) {
-                return _errorMesage(state.error);
+              if (state.e) {
+                return _errorMessage(state.error);
               }
 
               return state.hasData
@@ -42,7 +42,7 @@ class Explore extends StatelessWidget {
     );
   }
 
-  Widget _errorMesage(String error) {
+  Widget _errorMessage(String error) {
     return Container(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -65,14 +65,13 @@ class Explore extends StatelessWidget {
   }
 
   Widget _listOfAudioItems(BuildContext context, ExploreState state) {
-    final _screenWidth = screenWidth(context);
     return Container(
       color: Colors.white70,
       padding: const EdgeInsets.all(4),
       child: Scrollbar(
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: (_screenWidth >= 800) ? 4 : 2,
+            crossAxisCount: (screenWidth(context) >= 800) ? 4 : 2,
             mainAxisSpacing: 4,
           ),
           shrinkWrap: true,

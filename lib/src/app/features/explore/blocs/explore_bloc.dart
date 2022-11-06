@@ -2,7 +2,7 @@ import 'package:audio_player_flutter/src/app/features/explore/blocs/blocs.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ExploreBloc extends Bloc<ExploreEvent, ExploreState> {
-  ExploreBloc(super.initialState);
+  ExploreBloc() : super(const ExploreState.initial());
 }
 
 // class ExploreBloc extends Bloc<ExploreEvent, ExploreState> {
