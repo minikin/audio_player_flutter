@@ -20,7 +20,7 @@ mixin _$PlayerState {
   TResult when<TResult extends Object?>({
     required TResult Function() pause,
     required TResult Function(AudioFile audioFile) play,
-    required TResult Function() resume,
+    required TResult Function(int position) resume,
     required TResult Function() stop,
     required TResult Function(int seekToPosition) seekTo,
     required TResult Function(int position) tick,
@@ -30,7 +30,7 @@ mixin _$PlayerState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pause,
     TResult? Function(AudioFile audioFile)? play,
-    TResult? Function()? resume,
+    TResult? Function(int position)? resume,
     TResult? Function()? stop,
     TResult? Function(int seekToPosition)? seekTo,
     TResult? Function(int position)? tick,
@@ -40,7 +40,7 @@ mixin _$PlayerState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pause,
     TResult Function(AudioFile audioFile)? play,
-    TResult Function()? resume,
+    TResult Function(int position)? resume,
     TResult Function()? stop,
     TResult Function(int seekToPosition)? seekTo,
     TResult Function(int position)? tick,
@@ -136,7 +136,7 @@ class _$Pause implements Pause {
   TResult when<TResult extends Object?>({
     required TResult Function() pause,
     required TResult Function(AudioFile audioFile) play,
-    required TResult Function() resume,
+    required TResult Function(int position) resume,
     required TResult Function() stop,
     required TResult Function(int seekToPosition) seekTo,
     required TResult Function(int position) tick,
@@ -149,7 +149,7 @@ class _$Pause implements Pause {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pause,
     TResult? Function(AudioFile audioFile)? play,
-    TResult? Function()? resume,
+    TResult? Function(int position)? resume,
     TResult? Function()? stop,
     TResult? Function(int seekToPosition)? seekTo,
     TResult? Function(int position)? tick,
@@ -162,7 +162,7 @@ class _$Pause implements Pause {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pause,
     TResult Function(AudioFile audioFile)? play,
-    TResult Function()? resume,
+    TResult Function(int position)? resume,
     TResult Function()? stop,
     TResult Function(int seekToPosition)? seekTo,
     TResult Function(int position)? tick,
@@ -296,7 +296,7 @@ class _$Play implements Play {
   TResult when<TResult extends Object?>({
     required TResult Function() pause,
     required TResult Function(AudioFile audioFile) play,
-    required TResult Function() resume,
+    required TResult Function(int position) resume,
     required TResult Function() stop,
     required TResult Function(int seekToPosition) seekTo,
     required TResult Function(int position) tick,
@@ -309,7 +309,7 @@ class _$Play implements Play {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pause,
     TResult? Function(AudioFile audioFile)? play,
-    TResult? Function()? resume,
+    TResult? Function(int position)? resume,
     TResult? Function()? stop,
     TResult? Function(int seekToPosition)? seekTo,
     TResult? Function(int position)? tick,
@@ -322,7 +322,7 @@ class _$Play implements Play {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pause,
     TResult Function(AudioFile audioFile)? play,
-    TResult Function()? resume,
+    TResult Function(int position)? resume,
     TResult Function()? stop,
     TResult Function(int seekToPosition)? seekTo,
     TResult Function(int position)? tick,
@@ -390,6 +390,8 @@ abstract class Play implements PlayerState {
 abstract class _$$ResumeCopyWith<$Res> {
   factory _$$ResumeCopyWith(_$Resume value, $Res Function(_$Resume) then) =
       __$$ResumeCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int position});
 }
 
 /// @nodoc
@@ -398,38 +400,63 @@ class __$$ResumeCopyWithImpl<$Res>
     implements _$$ResumeCopyWith<$Res> {
   __$$ResumeCopyWithImpl(_$Resume _value, $Res Function(_$Resume) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? position = null,
+  }) {
+    return _then(_$Resume(
+      null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$Resume implements Resume {
-  const _$Resume();
+  const _$Resume(this.position);
+
+  @override
+  final int position;
 
   @override
   String toString() {
-    return 'PlayerState.resume()';
+    return 'PlayerState.resume(position: $position)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Resume);
+        (other.runtimeType == runtimeType &&
+            other is _$Resume &&
+            (identical(other.position, position) ||
+                other.position == position));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, position);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ResumeCopyWith<_$Resume> get copyWith =>
+      __$$ResumeCopyWithImpl<_$Resume>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() pause,
     required TResult Function(AudioFile audioFile) play,
-    required TResult Function() resume,
+    required TResult Function(int position) resume,
     required TResult Function() stop,
     required TResult Function(int seekToPosition) seekTo,
     required TResult Function(int position) tick,
   }) {
-    return resume();
+    return resume(position);
   }
 
   @override
@@ -437,12 +464,12 @@ class _$Resume implements Resume {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pause,
     TResult? Function(AudioFile audioFile)? play,
-    TResult? Function()? resume,
+    TResult? Function(int position)? resume,
     TResult? Function()? stop,
     TResult? Function(int seekToPosition)? seekTo,
     TResult? Function(int position)? tick,
   }) {
-    return resume?.call();
+    return resume?.call(position);
   }
 
   @override
@@ -450,14 +477,14 @@ class _$Resume implements Resume {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pause,
     TResult Function(AudioFile audioFile)? play,
-    TResult Function()? resume,
+    TResult Function(int position)? resume,
     TResult Function()? stop,
     TResult Function(int seekToPosition)? seekTo,
     TResult Function(int position)? tick,
     required TResult orElse(),
   }) {
     if (resume != null) {
-      return resume();
+      return resume(position);
     }
     return orElse();
   }
@@ -507,7 +534,12 @@ class _$Resume implements Resume {
 }
 
 abstract class Resume implements PlayerState {
-  const factory Resume() = _$Resume;
+  const factory Resume(final int position) = _$Resume;
+
+  int get position;
+  @JsonKey(ignore: true)
+  _$$ResumeCopyWith<_$Resume> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -547,7 +579,7 @@ class _$Stop implements Stop {
   TResult when<TResult extends Object?>({
     required TResult Function() pause,
     required TResult Function(AudioFile audioFile) play,
-    required TResult Function() resume,
+    required TResult Function(int position) resume,
     required TResult Function() stop,
     required TResult Function(int seekToPosition) seekTo,
     required TResult Function(int position) tick,
@@ -560,7 +592,7 @@ class _$Stop implements Stop {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pause,
     TResult? Function(AudioFile audioFile)? play,
-    TResult? Function()? resume,
+    TResult? Function(int position)? resume,
     TResult? Function()? stop,
     TResult? Function(int seekToPosition)? seekTo,
     TResult? Function(int position)? tick,
@@ -573,7 +605,7 @@ class _$Stop implements Stop {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pause,
     TResult Function(AudioFile audioFile)? play,
-    TResult Function()? resume,
+    TResult Function(int position)? resume,
     TResult Function()? stop,
     TResult Function(int seekToPosition)? seekTo,
     TResult Function(int position)? tick,
@@ -698,7 +730,7 @@ class _$SeekTo implements SeekTo {
   TResult when<TResult extends Object?>({
     required TResult Function() pause,
     required TResult Function(AudioFile audioFile) play,
-    required TResult Function() resume,
+    required TResult Function(int position) resume,
     required TResult Function() stop,
     required TResult Function(int seekToPosition) seekTo,
     required TResult Function(int position) tick,
@@ -711,7 +743,7 @@ class _$SeekTo implements SeekTo {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pause,
     TResult? Function(AudioFile audioFile)? play,
-    TResult? Function()? resume,
+    TResult? Function(int position)? resume,
     TResult? Function()? stop,
     TResult? Function(int seekToPosition)? seekTo,
     TResult? Function(int position)? tick,
@@ -724,7 +756,7 @@ class _$SeekTo implements SeekTo {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pause,
     TResult Function(AudioFile audioFile)? play,
-    TResult Function()? resume,
+    TResult Function(int position)? resume,
     TResult Function()? stop,
     TResult Function(int seekToPosition)? seekTo,
     TResult Function(int position)? tick,
@@ -853,7 +885,7 @@ class _$Tick implements Tick {
   TResult when<TResult extends Object?>({
     required TResult Function() pause,
     required TResult Function(AudioFile audioFile) play,
-    required TResult Function() resume,
+    required TResult Function(int position) resume,
     required TResult Function() stop,
     required TResult Function(int seekToPosition) seekTo,
     required TResult Function(int position) tick,
@@ -866,7 +898,7 @@ class _$Tick implements Tick {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pause,
     TResult? Function(AudioFile audioFile)? play,
-    TResult? Function()? resume,
+    TResult? Function(int position)? resume,
     TResult? Function()? stop,
     TResult? Function(int seekToPosition)? seekTo,
     TResult? Function(int position)? tick,
@@ -879,7 +911,7 @@ class _$Tick implements Tick {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pause,
     TResult Function(AudioFile audioFile)? play,
-    TResult Function()? resume,
+    TResult Function(int position)? resume,
     TResult Function()? stop,
     TResult Function(int seekToPosition)? seekTo,
     TResult Function(int position)? tick,

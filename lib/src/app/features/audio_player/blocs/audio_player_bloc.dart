@@ -2,6 +2,7 @@ import 'package:audio_player_flutter/src/app/features/audio_player/blocs/blocs.d
 import 'package:audio_player_flutter/src/app/features/audio_player/blocs/player_state.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/view_models/audio_skip_button_view_model.dart';
 import 'package:audio_player_flutter/src/configurations/environment/environment.dart';
+import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AudioPlayerBloc extends Bloc<PlayerEvent, PlayerState> {
@@ -11,15 +12,17 @@ class AudioPlayerBloc extends Bloc<PlayerEvent, PlayerState> {
 
   AudioPlayerBloc() : super(const PlayerState.stop());
 
-  // void resume() {
-  //   if (_isPlayed) {
-  //     add(ResumeEvent((b) => b));
-  //   }
-  // }
+  void get resume => Current.audioService.resume;
 
-  // void seekTo(int position) {
-  //   add(SeekEvent(seekToPosition: position));
-  // }
+  void get stop => Current.audioService.stop;
+
+  void get pause => Current.audioService.pause;
+
+  double get trackPosition => _trackPosition.toDouble();
+
+  void seekTo(int position) {
+    add(PlayerEvent.seekTo(position));
+  }
 
   void skip15seconds(AudioSkipButtonViewModel buttonType) {
     buttonType.when(
@@ -33,19 +36,17 @@ class AudioPlayerBloc extends Bloc<PlayerEvent, PlayerState> {
     );
   }
 
-  void stop() => add(StopEvent((b) => b));
-
   void toggle(AudioFile audioFile) {
-    _isDisposed = false;
-    if (state.stopped) {
-      _isPlayed = false;
-      add(PlayEvent((b) => b..audioFile.replace(audioFile)));
-    } else if (state.paused) {
-      add(ResumeEvent((b) => b));
-    } else {
-      add(PauseEvent((b) => b));
-      _isPlayed = false;
-    }
+    // _isDisposed = false;
+    // if (state.stopped) {
+    //   _isPlayed = false;
+    //   add(PlayEvent((b) => b..audioFile.replace(audioFile)));
+    // } else if (state.paused) {
+    //   add(ResumeEvent((b) => b));
+    // } else {
+    //   add(PauseEvent((b) => b));
+    //   _isPlayed = false;
+    // }
   }
 
   // Stream<PlayerState> _pauseTune(PauseEvent event) async* {
@@ -100,12 +101,8 @@ class AudioPlayerBloc extends Bloc<PlayerEvent, PlayerState> {
   //   _isPlayed = false;
   //   yield PlayerState.stopped();
   // }
-}
 
-
-//   double get trackPosition => _trackPosition.toDouble();
-
-//   @override
+  //   @override
 //   Stream<PlayerState> mapEventToState(PlayerEvent event) async* {
 //     if (event is PauseEvent) {
 //       yield* _pauseTune(event);
@@ -121,5 +118,4 @@ class AudioPlayerBloc extends Bloc<PlayerEvent, PlayerState> {
 //       yield* _seekToPosition(event);
 //     }
 //   }
-
-// }
+}

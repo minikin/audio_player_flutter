@@ -21,7 +21,7 @@ class AudioSlider extends StatelessWidget {
       max: audioFile.duration.toDouble(),
       activeColor: Colors.black,
       onChanged: (value) => bloc.seekTo(value.toInt()),
-      onChangeEnd: (value) => bloc.resume(),
+      onChangeEnd: (value) => bloc.resume,
     );
   }
 }
