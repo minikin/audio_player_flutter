@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'audio_file.freezed.dart';
@@ -16,4 +18,10 @@ class AudioFile with _$AudioFile {
 
   factory AudioFile.fromJson(Map<String, Object?> json) =>
       _$AudioFileFromJson(json);
+
+  static List<AudioFile> parseListOfAudioFiles(String responseBody) {
+    final List<Map<String, Object?>> jsonList =
+        json.decode(responseBody).cast<List<Map<String, Object?>>>();
+    return jsonList.map((item) => AudioFile.fromJson(item)).toList();
+  }
 }

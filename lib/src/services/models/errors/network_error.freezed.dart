@@ -46,7 +46,7 @@ mixin _$NetworkError {
     required TResult Function(Ok value) ok,
     required TResult Function(Redirection value) redirection,
     required TResult Function(ClientError value) clientError,
-    required TResult Function(serverError value) serverError,
+    required TResult Function(ServerError value) serverError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,7 +54,7 @@ mixin _$NetworkError {
     TResult? Function(Ok value)? ok,
     TResult? Function(Redirection value)? redirection,
     TResult? Function(ClientError value)? clientError,
-    TResult? Function(serverError value)? serverError,
+    TResult? Function(ServerError value)? serverError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,7 +62,7 @@ mixin _$NetworkError {
     TResult Function(Ok value)? ok,
     TResult Function(Redirection value)? redirection,
     TResult Function(ClientError value)? clientError,
-    TResult Function(serverError value)? serverError,
+    TResult Function(ServerError value)? serverError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -161,7 +161,7 @@ class _$Ok implements Ok {
     required TResult Function(Ok value) ok,
     required TResult Function(Redirection value) redirection,
     required TResult Function(ClientError value) clientError,
-    required TResult Function(serverError value) serverError,
+    required TResult Function(ServerError value) serverError,
   }) {
     return ok(this);
   }
@@ -172,7 +172,7 @@ class _$Ok implements Ok {
     TResult? Function(Ok value)? ok,
     TResult? Function(Redirection value)? redirection,
     TResult? Function(ClientError value)? clientError,
-    TResult? Function(serverError value)? serverError,
+    TResult? Function(ServerError value)? serverError,
   }) {
     return ok?.call(this);
   }
@@ -183,7 +183,7 @@ class _$Ok implements Ok {
     TResult Function(Ok value)? ok,
     TResult Function(Redirection value)? redirection,
     TResult Function(ClientError value)? clientError,
-    TResult Function(serverError value)? serverError,
+    TResult Function(ServerError value)? serverError,
     required TResult orElse(),
   }) {
     if (ok != null) {
@@ -301,7 +301,7 @@ class _$Redirection implements Redirection {
     required TResult Function(Ok value) ok,
     required TResult Function(Redirection value) redirection,
     required TResult Function(ClientError value) clientError,
-    required TResult Function(serverError value) serverError,
+    required TResult Function(ServerError value) serverError,
   }) {
     return redirection(this);
   }
@@ -312,7 +312,7 @@ class _$Redirection implements Redirection {
     TResult? Function(Ok value)? ok,
     TResult? Function(Redirection value)? redirection,
     TResult? Function(ClientError value)? clientError,
-    TResult? Function(serverError value)? serverError,
+    TResult? Function(ServerError value)? serverError,
   }) {
     return redirection?.call(this);
   }
@@ -323,7 +323,7 @@ class _$Redirection implements Redirection {
     TResult Function(Ok value)? ok,
     TResult Function(Redirection value)? redirection,
     TResult Function(ClientError value)? clientError,
-    TResult Function(serverError value)? serverError,
+    TResult Function(ServerError value)? serverError,
     required TResult orElse(),
   }) {
     if (redirection != null) {
@@ -446,7 +446,7 @@ class _$ClientError implements ClientError {
     required TResult Function(Ok value) ok,
     required TResult Function(Redirection value) redirection,
     required TResult Function(ClientError value) clientError,
-    required TResult Function(serverError value) serverError,
+    required TResult Function(ServerError value) serverError,
   }) {
     return clientError(this);
   }
@@ -457,7 +457,7 @@ class _$ClientError implements ClientError {
     TResult? Function(Ok value)? ok,
     TResult? Function(Redirection value)? redirection,
     TResult? Function(ClientError value)? clientError,
-    TResult? Function(serverError value)? serverError,
+    TResult? Function(ServerError value)? serverError,
   }) {
     return clientError?.call(this);
   }
@@ -468,7 +468,7 @@ class _$ClientError implements ClientError {
     TResult Function(Ok value)? ok,
     TResult Function(Redirection value)? redirection,
     TResult Function(ClientError value)? clientError,
-    TResult Function(serverError value)? serverError,
+    TResult Function(ServerError value)? serverError,
     required TResult orElse(),
   }) {
     if (clientError != null) {
@@ -488,20 +488,20 @@ abstract class ClientError implements NetworkError {
 }
 
 /// @nodoc
-abstract class _$$serverErrorCopyWith<$Res> {
-  factory _$$serverErrorCopyWith(
-          _$serverError value, $Res Function(_$serverError) then) =
-      __$$serverErrorCopyWithImpl<$Res>;
+abstract class _$$ServerErrorCopyWith<$Res> {
+  factory _$$ServerErrorCopyWith(
+          _$ServerError value, $Res Function(_$ServerError) then) =
+      __$$ServerErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$$serverErrorCopyWithImpl<$Res>
-    extends _$NetworkErrorCopyWithImpl<$Res, _$serverError>
-    implements _$$serverErrorCopyWith<$Res> {
-  __$$serverErrorCopyWithImpl(
-      _$serverError _value, $Res Function(_$serverError) _then)
+class __$$ServerErrorCopyWithImpl<$Res>
+    extends _$NetworkErrorCopyWithImpl<$Res, _$ServerError>
+    implements _$$ServerErrorCopyWith<$Res> {
+  __$$ServerErrorCopyWithImpl(
+      _$ServerError _value, $Res Function(_$ServerError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -509,7 +509,7 @@ class __$$serverErrorCopyWithImpl<$Res>
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_$serverError(
+    return _then(_$ServerError(
       freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -520,8 +520,8 @@ class __$$serverErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$serverError implements serverError {
-  const _$serverError(this.message);
+class _$ServerError implements ServerError {
+  const _$ServerError(this.message);
 
   @override
   final String? message;
@@ -535,7 +535,7 @@ class _$serverError implements serverError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$serverError &&
+            other is _$ServerError &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -545,8 +545,8 @@ class _$serverError implements serverError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$serverErrorCopyWith<_$serverError> get copyWith =>
-      __$$serverErrorCopyWithImpl<_$serverError>(this, _$identity);
+  _$$ServerErrorCopyWith<_$ServerError> get copyWith =>
+      __$$ServerErrorCopyWithImpl<_$ServerError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -591,7 +591,7 @@ class _$serverError implements serverError {
     required TResult Function(Ok value) ok,
     required TResult Function(Redirection value) redirection,
     required TResult Function(ClientError value) clientError,
-    required TResult Function(serverError value) serverError,
+    required TResult Function(ServerError value) serverError,
   }) {
     return serverError(this);
   }
@@ -602,7 +602,7 @@ class _$serverError implements serverError {
     TResult? Function(Ok value)? ok,
     TResult? Function(Redirection value)? redirection,
     TResult? Function(ClientError value)? clientError,
-    TResult? Function(serverError value)? serverError,
+    TResult? Function(ServerError value)? serverError,
   }) {
     return serverError?.call(this);
   }
@@ -613,7 +613,7 @@ class _$serverError implements serverError {
     TResult Function(Ok value)? ok,
     TResult Function(Redirection value)? redirection,
     TResult Function(ClientError value)? clientError,
-    TResult Function(serverError value)? serverError,
+    TResult Function(ServerError value)? serverError,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -623,11 +623,11 @@ class _$serverError implements serverError {
   }
 }
 
-abstract class serverError implements NetworkError {
-  const factory serverError(final String? message) = _$serverError;
+abstract class ServerError implements NetworkError {
+  const factory ServerError(final String? message) = _$ServerError;
 
   String? get message;
   @JsonKey(ignore: true)
-  _$$serverErrorCopyWith<_$serverError> get copyWith =>
+  _$$ServerErrorCopyWith<_$ServerError> get copyWith =>
       throw _privateConstructorUsedError;
 }

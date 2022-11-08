@@ -19,7 +19,7 @@ mixin _$ExploreState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(String error) error,
+    required TResult Function(NetworkError error) error,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<AudioFile> items) success,
@@ -28,7 +28,7 @@ mixin _$ExploreState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(String error)? error,
+    TResult? Function(NetworkError error)? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<AudioFile> items)? success,
@@ -37,7 +37,7 @@ mixin _$ExploreState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(String error)? error,
+    TResult Function(NetworkError error)? error,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<AudioFile> items)? success,
@@ -129,7 +129,7 @@ class _$Empty implements Empty {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(String error) error,
+    required TResult Function(NetworkError error) error,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<AudioFile> items) success,
@@ -141,7 +141,7 @@ class _$Empty implements Empty {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(String error)? error,
+    TResult? Function(NetworkError error)? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<AudioFile> items)? success,
@@ -153,7 +153,7 @@ class _$Empty implements Empty {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(String error)? error,
+    TResult Function(NetworkError error)? error,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<AudioFile> items)? success,
@@ -215,7 +215,9 @@ abstract class _$$ErrorCopyWith<$Res> {
   factory _$$ErrorCopyWith(_$Error value, $Res Function(_$Error) then) =
       __$$ErrorCopyWithImpl<$Res>;
   @useResult
-  $Res call({String error});
+  $Res call({NetworkError error});
+
+  $NetworkErrorCopyWith<$Res> get error;
 }
 
 /// @nodoc
@@ -234,8 +236,16 @@ class __$$ErrorCopyWithImpl<$Res>
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as String,
+              as NetworkError,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkErrorCopyWith<$Res> get error {
+    return $NetworkErrorCopyWith<$Res>(_value.error, (value) {
+      return _then(_value.copyWith(error: value));
+    });
   }
 }
 
@@ -245,7 +255,7 @@ class _$Error implements Error {
   const _$Error({required this.error});
 
   @override
-  final String error;
+  final NetworkError error;
 
   @override
   String toString() {
@@ -273,7 +283,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(String error) error,
+    required TResult Function(NetworkError error) error,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<AudioFile> items) success,
@@ -285,7 +295,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(String error)? error,
+    TResult? Function(NetworkError error)? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<AudioFile> items)? success,
@@ -297,7 +307,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(String error)? error,
+    TResult Function(NetworkError error)? error,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<AudioFile> items)? success,
@@ -351,9 +361,9 @@ class _$Error implements Error {
 }
 
 abstract class Error implements ExploreState {
-  const factory Error({required final String error}) = _$Error;
+  const factory Error({required final NetworkError error}) = _$Error;
 
-  String get error;
+  NetworkError get error;
   @JsonKey(ignore: true)
   _$$ErrorCopyWith<_$Error> get copyWith => throw _privateConstructorUsedError;
 }
@@ -395,7 +405,7 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(String error) error,
+    required TResult Function(NetworkError error) error,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<AudioFile> items) success,
@@ -407,7 +417,7 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(String error)? error,
+    TResult? Function(NetworkError error)? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<AudioFile> items)? success,
@@ -419,7 +429,7 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(String error)? error,
+    TResult Function(NetworkError error)? error,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<AudioFile> items)? success,
@@ -513,7 +523,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(String error) error,
+    required TResult Function(NetworkError error) error,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<AudioFile> items) success,
@@ -525,7 +535,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(String error)? error,
+    TResult? Function(NetworkError error)? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<AudioFile> items)? success,
@@ -537,7 +547,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(String error)? error,
+    TResult Function(NetworkError error)? error,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<AudioFile> items)? success,
@@ -662,7 +672,7 @@ class _$Success implements Success {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(String error) error,
+    required TResult Function(NetworkError error) error,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<AudioFile> items) success,
@@ -674,7 +684,7 @@ class _$Success implements Success {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(String error)? error,
+    TResult? Function(NetworkError error)? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<AudioFile> items)? success,
@@ -686,7 +696,7 @@ class _$Success implements Success {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(String error)? error,
+    TResult Function(NetworkError error)? error,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<AudioFile> items)? success,

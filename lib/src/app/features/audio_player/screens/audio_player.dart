@@ -1,5 +1,6 @@
 import 'package:audio_player_flutter/src/app/common/widgets/widgets.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/blocs/blocs.dart';
+import 'package:audio_player_flutter/src/app/features/audio_player/blocs/player_state.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/view_models/audio_skip_button_view_model.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/widgets/audio_play_button.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/widgets/audio_skip_button.dart';
@@ -111,10 +112,10 @@ class AudioPlayer extends StatelessWidget {
                         children: <Widget>[
                           AudioSkipButton(
                             stream: context.bloc<AudioPlayerBloc>(),
-                            buttonType: AudioSkipButtonType.rewind,
+                            buttonType: const AudioSkipButtonViewModel.rewind(),
                             onPressed: () => context
                                 .bloc<AudioPlayerBloc>()
-                                .skip15seconds(AudioSkipButtonType.rewind),
+                                .skip15seconds(AudioSkipButtonViewModel.rewind),
                           ),
                           AudioPlayButton(
                             stream: context.bloc<AudioPlayerBloc>(),
@@ -125,10 +126,12 @@ class AudioPlayer extends StatelessWidget {
                           ),
                           AudioSkipButton(
                             stream: context.bloc<AudioPlayerBloc>(),
-                            buttonType: AudioSkipButtonType.forward,
-                            onPressed: () => context
-                                .bloc<AudioPlayerBloc>()
-                                .skip15seconds(AudioSkipButtonType.forward),
+                            buttonType:
+                                const AudioSkipButtonViewModel.forward(),
+                            onPressed: () =>
+                                context.bloc<AudioPlayerBloc>().skip15seconds(
+                                      AudioSkipButtonViewModel.forward,
+                                    ),
                           ),
                         ],
                       ),

@@ -1,5 +1,5 @@
 name: audio_player_flutter
-description: Apple Music / Tidal Style Audio Player for Flutter
+description: Apple Music / Tidal Style Audio Player for Flutter.
 version: 0.1.0
 
 environment:
@@ -11,12 +11,12 @@ dependencies:
     sdk: flutter
 
   audioplayers: ^1.1.1
-  built_collection: ^5.1.1
-  built_value: ^8.4.1
+  bloc_concurrency: ^0.2.0
   flutter_bloc: ^8.1.1
   freezed_annotation: ^2.2.0
   http: ^0.13.5
   json_annotation: ^4.7.0
+  stream_transform: ^2.1.0
   transparent_image: ^2.0.0
   uuid: ^3.0.6
 

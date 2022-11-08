@@ -2,9 +2,9 @@ import 'package:audio_player_flutter/src/app/features/audio_player/view_models/a
 import 'package:flutter/material.dart';
 
 class AudioSkipButton<S> extends StatelessWidget {
+  final AudioSkipButtonViewModel buttonType;
   final Color activeColor;
   final Color disabledColor;
-  final AudioSkipButtonViewModel buttonType;
   final Stream<S> stream;
   final VoidCallback onPressed;
 
@@ -24,20 +24,16 @@ class AudioSkipButton<S> extends StatelessWidget {
       builder: (context, snapshot) {
         return IconButton(
           iconSize: 70,
-          icon: _configureIcon(),
+          icon: buttonType.when(
+            rewind: () => const Icon(Icons.fast_forward),
+            forward: () => const Icon(Icons.fast_rewind),
+          ),
           tooltip: buttonType.toolTip(),
           color: activeColor,
           disabledColor: disabledColor,
           onPressed: (snapshot.hasData) ? onPressed : null,
         );
       },
-    );
-  }
-
-  Icon _configureIcon() {
-    return buttonType.when(
-      rewind: () => const Icon(Icons.fast_forward),
-      forward: () => const Icon(Icons.fast_rewind),
     );
   }
 }

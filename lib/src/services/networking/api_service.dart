@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:audio_player_flutter/src/services/models/models.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
@@ -16,7 +15,7 @@ class ApiService {
   })  : client = client ?? http.Client(),
         cache = cache ?? <String, Object>{};
 
-  Future<BuiltList<AudioFile>> fetchAllTunes() async {
+  Future<List<AudioFile>> fetchAllTunes() async {
     final response = await client.get(
       Uri.parse('$_baseUrl/tunes'),
       headers: {
