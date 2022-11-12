@@ -1,3 +1,1 @@
-void main() {
-  print('ADD TESTS!');
-}
+void main() {}

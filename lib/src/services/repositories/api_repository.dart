@@ -1,7 +1,6 @@
 import 'package:audio_player_flutter/src/services/models/models.dart';
 import 'package:audio_player_flutter/src/services/networking/api_service.dart';
 import 'package:audio_player_flutter/src/services/networking/network_checker.dart';
-import 'package:built_collection/built_collection.dart';
 
 class ApiRepository {
   final ApiService apiService;
@@ -10,16 +9,16 @@ class ApiRepository {
     ApiService? apiService,
   }) : apiService = apiService ?? ApiService();
 
-  Future<BuiltList<AudioFile>> fetchAllTunes() async {
+  Future<List<AudioFile>> fetchAllTunes() async {
     try {
       final isConnectedToInternet = await checkInterneConnection();
       if (!isConnectedToInternet) {
-        throw NetworkError('No Internet');
+        throw const NetworkError.clientError('No Internet Connection');
       }
 
       return await apiService.fetchAllTunes();
     } on NetworkError catch (error) {
-      throw NetworkError(error.message);
+      throw NetworkError.serverError(error.toString());
     }
   }
 }

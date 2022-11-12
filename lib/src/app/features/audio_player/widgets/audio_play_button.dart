@@ -1,17 +1,17 @@
-import 'package:audio_player_flutter/src/app/features/audio_player/blocs/blocs.dart';
+import 'package:audio_player_flutter/src/app/features/audio_player/blocs/player_state.dart';
 import 'package:flutter/material.dart';
 
 class AudioPlayButton<S> extends StatelessWidget {
-  final Color activeColor;
-  final Color disabledColor;
   final PlayerState playerState;
   final Stream<S> stream;
   final VoidCallback onPressed;
+  final Color activeColor;
+  final Color disabledColor;
 
   const AudioPlayButton({
     required this.playerState,
-    required this.onPressed,
     required this.stream,
+    required this.onPressed,
     this.activeColor = Colors.black,
     this.disabledColor = Colors.grey,
     Key? key,
@@ -22,30 +22,25 @@ class AudioPlayButton<S> extends StatelessWidget {
     return StreamBuilder(
       stream: stream,
       builder: (context, snapshot) {
-        return Container(
-          child: IconButton(
-            iconSize: 70,
-            icon: _configureIcon(),
-            color: activeColor,
-            disabledColor: disabledColor,
-            onPressed: (snapshot.hasData) ? onPressed : null,
-          ),
+        return IconButton(
+          iconSize: 70,
+          icon: _configureIcon(),
+          color: activeColor,
+          disabledColor: disabledColor,
+          onPressed: (snapshot.hasData) ? onPressed : null,
         );
       },
     );
   }
 
   Icon _configureIcon() {
-    if (playerState == PlayerState.stopped()) {
-      return const Icon(Icons.play_circle_filled);
-    } else if (playerState == PlayerState.playing(playerState.position)) {
-      return const Icon(Icons.pause);
-    } else if (playerState == PlayerState.paused(playerState.position)) {
-      return const Icon(Icons.play_circle_filled);
-    } else if (playerState == PlayerState.resumed(playerState.position)) {
-      return const Icon(Icons.pause);
-    } else {
-      return const Icon(Icons.stop);
-    }
+    return playerState.when(
+      stop: () => const Icon(Icons.play_circle_filled),
+      pause: () => const Icon(Icons.pause),
+      play: (_) => const Icon(Icons.stop),
+      resume: (_) => const Icon(Icons.stop),
+      seekTo: (_) => const Icon(Icons.play_circle_filled),
+      tick: (_) => const Icon(Icons.pause),
+    );
   }
 }

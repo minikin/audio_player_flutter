@@ -1,6 +1,7 @@
 import 'package:audio_player_flutter/src/app/common/widgets/widgets.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/blocs/blocs.dart';
-import 'package:audio_player_flutter/src/app/features/audio_player/models/audio_skip_button_type.dart';
+import 'package:audio_player_flutter/src/app/features/audio_player/blocs/player_state.dart';
+import 'package:audio_player_flutter/src/app/features/audio_player/view_models/audio_skip_button_view_model.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/widgets/audio_play_button.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/widgets/audio_skip_button.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/widgets/audio_slider.dart';
@@ -43,7 +44,7 @@ class AudioPlayer extends StatelessWidget {
                           icon: const Icon(Icons.close),
                           tooltip: 'Close',
                           onPressed: () {
-                            context.bloc<AudioPlayerBloc>().stop();
+                            context.read<AudioPlayerBloc>().stop;
                             Navigator.pop(context);
                           },
                         ),
@@ -51,7 +52,7 @@ class AudioPlayer extends StatelessWidget {
                       SizedBox(
                         width: screenWidth(context),
                         child: Stack(
-                          children: <Widget>[
+                          children: [
                             Center(
                               child: Column(
                                 children: <Widget>[
@@ -75,7 +76,7 @@ class AudioPlayer extends StatelessWidget {
                       _configureArtwork(context),
                       const SizedBox(height: 40),
                       AudioSlider(
-                        bloc: context.bloc<AudioPlayerBloc>(),
+                        bloc: context.read<AudioPlayerBloc>(),
                         audioFile: audioFile,
                       ),
                       Container(
@@ -85,10 +86,10 @@ class AudioPlayer extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              mediaTimeFormarter(
+                              mediaTimeFormatter(
                                 Duration(
                                   milliseconds: context
-                                      .bloc<AudioPlayerBloc>()
+                                      .read<AudioPlayerBloc>()
                                       .trackPosition
                                       .toInt(),
                                 ),
@@ -96,7 +97,7 @@ class AudioPlayer extends StatelessWidget {
                               style: const TextStyle(color: Colors.grey),
                             ),
                             Text(
-                              mediaTimeFormarter(
+                              mediaTimeFormatter(
                                 Duration(milliseconds: audioFile.duration),
                               ),
                               style: const TextStyle(color: Colors.grey),
@@ -110,25 +111,28 @@ class AudioPlayer extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           AudioSkipButton(
-                            stream: context.bloc<AudioPlayerBloc>(),
-                            buttonType: AudioSkipButtonType.rewind,
-                            onPressed: () => context
-                                .bloc<AudioPlayerBloc>()
-                                .skip15seconds(AudioSkipButtonType.rewind),
+                            stream: context.read<AudioPlayerBloc>().stream,
+                            buttonType: const AudioSkipButtonViewModel.rewind(),
+                            onPressed: () =>
+                                context.read<AudioPlayerBloc>().skip15seconds(
+                                      const AudioSkipButtonViewModel.rewind(),
+                                    ),
                           ),
                           AudioPlayButton(
-                            stream: context.bloc<AudioPlayerBloc>(),
+                            stream: context.read<AudioPlayerBloc>().stream,
                             playerState: state,
                             onPressed: () => context
-                                .bloc<AudioPlayerBloc>()
+                                .read<AudioPlayerBloc>()
                                 .toggle(audioFile),
                           ),
                           AudioSkipButton(
-                            stream: context.bloc<AudioPlayerBloc>(),
-                            buttonType: AudioSkipButtonType.forward,
-                            onPressed: () => context
-                                .bloc<AudioPlayerBloc>()
-                                .skip15seconds(AudioSkipButtonType.forward),
+                            stream: context.read<AudioPlayerBloc>().stream,
+                            buttonType:
+                                const AudioSkipButtonViewModel.forward(),
+                            onPressed: () =>
+                                context.read<AudioPlayerBloc>().skip15seconds(
+                                      const AudioSkipButtonViewModel.forward(),
+                                    ),
                           ),
                         ],
                       ),

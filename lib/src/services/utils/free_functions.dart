@@ -5,5 +5,5 @@ double screenWidth(BuildContext context) => MediaQuery.of(context).size.width;
 double aspectRatio(BuildContext context) =>
     screenWidth(context) / screenHeight(context);
 
-String mediaTimeFormarter(Duration d) =>
+String mediaTimeFormatter(Duration d) =>
     d.toString().split('.').first.padLeft(8, '0');
