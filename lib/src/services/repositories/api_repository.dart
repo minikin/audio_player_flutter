@@ -13,12 +13,12 @@ class ApiRepository {
     try {
       final isConnectedToInternet = await checkInterneConnection();
       if (!isConnectedToInternet) {
-        throw const NetworkError.clientError('No Internet Connection');
+        throw NetworkError('No Internet');
       }
 
       return await apiService.fetchAllTunes();
     } on NetworkError catch (error) {
-      throw NetworkError.serverError(error.toString());
+      throw NetworkError(error.message);
     }
   }
 }
