@@ -29,7 +29,7 @@ class ApiService {
     if (response.statusCode == 200) {
       return compute(AudioFile.parseListOfAudioFiles, response.body);
     } else {
-      throw NetworkError(response.statusCode.toString());
+      throw NetworkError.serverError(response.statusCode.toString());
     }
   }
 }

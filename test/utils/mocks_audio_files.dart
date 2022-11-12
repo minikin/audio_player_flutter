@@ -1,5 +1,5 @@
-import 'package:audio_player_flutter/src/services/models/audio_file/_audio_file.dart';
 import 'package:audio_player_flutter/src/services/persistance/json_storage.dart';
+import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:uuid/uuid.dart';
 
 import 'mock_utils.dart';
@@ -53,9 +53,10 @@ const _audioFilesTitles = [
 ];
 
 Future<void> generateMockRelaxItemsJsonFile() async {
-  final _jsonStorage = JsonStorage();
-  final _audioItems = MockAudioFilesDataSource.randomList();
-  await _jsonStorage.writeJson(AudioFile.listOfAudioFilesToJson(_audioItems));
+  final jsonStorage = JsonStorage();
+  final audioItems = MockAudioFilesDataSource.randomList();
+  final jsonItems = audioItems.map((e) => e.toJson()).toList().toString();
+  await jsonStorage.writeJson(jsonItems);
 }
 
 class MockAudioFilesDataSource {
@@ -65,24 +66,22 @@ class MockAudioFilesDataSource {
   }
 
   static AudioFile _randomAudioFile() {
-    final authors =
+    final author =
         _audioFilesAuthors[random.nextInt(_audioFilesAuthors.length)];
 
     final title = _audioFilesTitles[random.nextInt(_audioFilesTitles.length)];
 
-    final artworkId = randomIntInRange(1, 23);
-    final artwork =
-        'http://api-flutter-audio-player.herokuapp.com/assets/images/$artworkId.png';
+    final artworkUrlPath =
+        'http://api-flutter-audio-player.herokuapp.com/assets/images/${randomIntInRange(1, 23)}.png';
 
     return AudioFile(
-      (b) => b
-        ..artist = authors
-        ..artworkUrlPath = artwork
-        ..audioFileUrlPath =
-            'https://api-flutter-audio-player.herokuapp.com/assets/audio/bensound-erf.mp3'
-        ..duration = 264600
-        ..id = Uuid().v4()
-        ..title = title,
+      artist: author,
+      artworkUrlPath: artworkUrlPath,
+      audioFileUrlPath:
+          'https://api-flutter-audio-player.herokuapp.com/assets/audio/bensound-erf.mp3',
+      duration: 264600,
+      id: const Uuid().v4(),
+      title: title,
     );
   }
 }
