@@ -1,7 +1,6 @@
 import 'package:audio_player_flutter/src/app/features/audio_player/blocs/blocs.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/blocs/player_state.dart';
 import 'package:audio_player_flutter/src/app/features/audio_player/view_models/audio_skip_button_view_model.dart';
-import 'package:audio_player_flutter/src/configurations/environment/environment.dart';
 import 'package:audio_player_flutter/src/services/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,11 +11,11 @@ class AudioPlayerBloc extends Bloc<PlayerEvent, PlayerState> {
 
   AudioPlayerBloc() : super(const PlayerState.stop());
 
-  void get resume => Current.audioService.resume;
+  void get resume => add(PlayerEvent.seekTo(_trackPosition));
 
-  void get stop => Current.audioService.stop;
+  void get stop => add(const PlayerEvent.stop());
 
-  void get pause => Current.audioService.pause;
+  void get pause => add(const PlayerEvent.pause());
 
   double get trackPosition => _trackPosition.toDouble();
 
@@ -29,11 +28,12 @@ class AudioPlayerBloc extends Bloc<PlayerEvent, PlayerState> {
       forward: () => _trackPosition + 15000,
       rewind: () => _trackPosition - 15000,
     );
-    Current.audioService.seekTo(
-      Duration(
-        milliseconds: _trackPosition.toInt(),
-      ),
-    );
+    add(PlayerEvent.seekTo(_trackPosition));
+    // Current.audioService.seekTo(
+    //   Duration(
+    //     milliseconds: _trackPosition.toInt(),
+    //   ),
+    // );
   }
 
   void toggle(AudioFile audioFile) {
