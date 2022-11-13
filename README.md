@@ -1,8 +1,7 @@
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
 
 <h1 align="center">
- 
- 
+
   WIP: Refactoring
 
   </a>
@@ -62,7 +61,6 @@
 - Background audio playback for iOS/Android
 - Audio files fetched and streamed from a [remote server](https://github.com/minikin/json_server_for_audio_player_flutter)
 - Responsive to screen size changes
-- Powered by [build_value](https://pub.dev/packages/built_value) and [built_collection](https://pub.dev/packages/built_collection)
 - State management by [BloC](https://pub.dev/packages/flutter_bloc)s
 - Background JSON parsing
 

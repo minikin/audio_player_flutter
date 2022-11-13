@@ -20,8 +20,8 @@ class Explore extends StatelessWidget {
             listener: (context, state) {},
             builder: (context, state) {
               return state.when(
-                empty: () => const Text('No data'),
-                initial: () => const Text('No data'),
+                initial: () => const Center(child: Text('Loading...')),
+                empty: () => const Center(child: Text('No data')),
                 success: (items) => Container(
                   color: Colors.white70,
                   padding: const EdgeInsets.all(4),
