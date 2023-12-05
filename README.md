@@ -1,14 +1,6 @@
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
 
 <h1 align="center">
-
-  WIP: Refactoring
-
-  </a>
-</h1>
-
-
-<h1 align="center">
   <a href="https://github.com/minikin/audio_player_flutter">
   Apple Music / Tidal Style Audio Player for Flutter
   </a>
